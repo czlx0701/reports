@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🦀 Murdock Beach 化石寻宝全攻略 — 2026年5月9日</title>
+<style>
+  :root {
+    --sand: #f4e4c1;
+    --ocean: #2e6b8a;
+    --driftwood: #6b5b4e;
+    --sky: #b8d4e8;
+    --fossil: #8b7355;
+    --highlight: #d4a84b;
+    --danger: #c0392b;
+    --success: #27ae60;
+    --info: #2980b9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(180deg, #1a2a3a 0%, #2e5a7a 30%, var(--sand) 60%, #d4c4a0 100%);
+    color: #2c3e50;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #1a3a5a 0%, #3a7a9a 50%, #5a9a7a 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '🦀 🐚 \⚒️  🐟  🔨  🪨';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: 28px;
+    opacity: 0.3;
+    letter-spacing: 30px;
+    white-space: nowrap;
+    animation: float 20s linear infinite;
+  }
+  @keyframes float {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .hero h1 { font-size: 2.2em; margin-bottom: 10px; position: relative; }
+  .hero .subtitle { font-size: 1.1em; opacity: 0.9; margin-bottom: 5px; }
+  .hero .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1em;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+  }
+  .hero .tide-info {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+  .hero .tide-info .time { font-size: 1.4em; font-weight: bold; color: #ffd700; }
+  .hero .tide-info .level { font-size: 0.9em; opacity: 0.8; }
+
+  /* Cards */
+  .card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .card h2 {
+    font-size: 1.5em;
+    color: var(--ocean);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--sand);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card h3 {
+    font-size: 1.15em;
+    color: var(--driftwood);
+    margin: 15px 0 8px 0;
+  }
+  .card ul, .card ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  .card li { margin-bottom: 6px; }
+  
+  /* Info boxes */
+  .info-box {
+    background: #e8f4fd;
+    border-left: 4px solid var(--info);
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .info-box.warning {
+    background: #fef9e7;
+    border-left-color: var(--highlight);
+  }
+  .info-box.danger {
+    background: #fdedec;
+    border-left-color: var(--danger);
+  }
+  .info-box.success {
+    background: #eafaf1;
+    border-left-color: var(--success);
+  }
+
+  /* SVG Diagrams */
+  .diagram-container {
+    background: #f8f4ef;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    border: 2px dashed #ccc;
+  }
+  .diagram-container svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .diagram-caption {
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* Checklist */
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .checklist .item {
+    background: #f9f6f0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e0d8cc;
+  }
+  .checklist .item.checked { 
+    background: #e8f5e9; 
+    border-color: var(--success);
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  .checklist .item .icon { font-size: 1.2em; }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    margin: 15px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--ocean), var(--highlight));
+    border-radius: 2px;
+  }
+  .timeline .step {
+    position: relative;
+    margin-bottom: 18px;
+    padding-left: 15px;
+  }
+  .timeline .step::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--ocean);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--ocean);
+  }
+  .timeline .step .time {
+    font-weight: bold;
+    color: var(--ocean);
+    font-size: 0.9em;
+  }
+  .timeline .step .label { font-size: 0.95em; }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 10px 0;
+  }
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .checklist { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Image comparison */
+  .compare {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  .compare > div {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  .compare .label { font-weight: bold; margin-bottom: 8px; font-size: 0.9em; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85em;
+  }
+
+  /* Weather mock */
+  .weather-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f5e6ca, #e8d4b0);
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+  .weather-row .temp { font-size: 1.8em; font-weight: bold; }
+  .weather-row .emoji { font-size: 2.5em; }
+
+  .tide-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+  .tide-table th {
+    background: var(--ocean);
+    color: white;
+    padding: 8px;
+    font-size: 0.85em;
+  }
+  .tide-table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .tide-table tr.best {
+    background: #fff3cd;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🦀 Murdock Beach 化石寻宝全攻略</h1>
+  <div class="subtitle">🏖️ 初学者一站式指南 · 带5岁女儿找螃蟹化石</div>
+  <div class="date-badge">📅 2026年5月9日（星期六）· 到达时间：12:00 PM</div>
+  <div class="tide-info">
+    <div>🌊 最佳赶海低潮</div>
+    <div class="time">⏰ 2:46 PM</div>
+    <div class="level">潮高 0.92 ft (0.28 m) · 非常好的低潮</div>
+    <div style="margin-top:8px; font-size:0.85em; opacity:0.8">
+      日出 5:43 AM · 日落 8:40 PM · 🌙 下弦月 (46% 可见)
+    </div>
+  </div>
+</div>
+
+<!-- === SECTION 1: OVERVIEW === -->
+<div class="card">
+  <h2>📍 概览：Murdock Beach 是什么地方？</h2>
+  <p>Murdock Beach 位于 <strong>奥林匹克半岛</strong> 的胡安·德·富卡海峡 (Strait of Juan de Fuca) 沿岸，在 Port Angeles 西边约 20 分钟车程。当地人叫它 <strong>"Fossil Beach"（化石海滩）</strong> 或 "Round Rock Beach"（圆石海滩）。</p>
+  <p>这里是华盛顿州公认的 <strong>最佳化石采集地之一</strong>，以 <strong>concretion（结核石）</strong> 闻名 —— 这些圆形的石头里面可能包裹着几百万年前的海洋生物化石！</p>
+  
+  <div class="info-box success">
+    <strong>✅ 为什么选这里？</strong><br>
+    • 全美公认的最佳化石海滩之一，即使初学者也能找到东西<br>
+    • 距离西雅图开车约 2.5 小时，当天往返完全可行<br>
+    • 适合带小孩：步行距离短（150码），海滩平坦安全<br>
+    • 能找到真正的螃蟹化石！🦀
+  </div>
+</div>
+
+<!-- === SECTION 2: GETTING THERE === -->
+<div class="card">
+  <h2>🚗 怎么去？交通 & 停车</h2>
+  
+  <h3>从西雅图出发</h3>
+  <ol>
+    <li>I-5 向北 → 在 Edmonds 坐渡轮到 Kingston（或走 Tacoma Narrows Bridge 绕行）</li>
+    <li>从 Kingston 沿 104 → 101 号公路到 Port Angeles</li>
+    <li>在 Port Angeles 转 <strong>112 号公路</strong>向西</li>
+    <li>经过 Joyce 小镇后继续开约 7 英里</li>
+    <li>看到 <strong>"Murdock Beach" 路牌</strong>右转进入碎石路</li>
+  </ol>
+  <p style="margin-top:8px;"><strong>总车程：</strong>西雅图出发约 2-2.5 小时（含渡轮）</p>
+
+  <div class="info-box">
+    <strong>🗺️ Google Maps 定位：</strong><br>
+    搜索 "Murdock Beach, Joyce, WA" 或坐标 <code>48.2279, -123.9004</code><br>
+    注意：导航可能指示从 Cannonball Road 进入，那是私路，走不通！<br>
+    必须从 <strong>112 号公路的官方入口</strong>进入。
+  </div>
+
+  <h3>停车</h3>
+  <ul>
+    <li>从 112 号公路右转后，沿 <strong>0.5 英里的碎石/土路</strong> 开到停车场</li>
+    <li>路窄、有坑洼，开慢一点</li>
+    <li>停车场很小（约 12 辆车），但平时人不多</li>
+    <li>停车场有 <strong>厕所</strong>（便携式便池）</li>
+  </ul>
+
+  <div class="info-box warning">
+    <strong>⚠️ 必办：Discover Pass（发现通行证）</strong><br>
+    这是 DNR（自然资源部）管理的土地，停车必须出示！<br>
+    • <strong>日票：$10</strong>（可在线上买或到现场自助信封投递）<br>
+    • <strong>年票：$30</strong>（如果以后还去 WA 州立公园/DNR 地很划算）<br>
+    • 线上购买：<a href="https://discoverpass.wa.gov" target="_blank">discoverpass.wa.gov</a><br>
+    • 写订单号 + 车牌号 + 日期放在仪表盘上
+  </div>
+</div>
+
+<!-- === SECTION 3: WALK TO BEACH === -->
+<div class="card">
+  <h2>🥾 从停车场到海滩</h2>
+  
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="600" height="200" fill="#f0e6d3" rx="10"/>
+      
+      <!-- Parking lot -->
+      <rect x="20" y="60" width="80" height="40" fill="#a0a0a0" rx="5"/>
+      <text x="60" y="85" text-anchor="middle" font-size="9" fill="white">🅿️ 停车场</text>
+      <text x="60" y="98" text-anchor="middle" font-size="7" fill="white">有厕所</text>
+      
+      <!-- Trail through forest -->
+      <line x1="100" y1="80" x2="180" y2="100" stroke="#8B7355" stroke-width="3" stroke-dasharray="5,3"/>
+      <line x1="180" y1="100" x2="260" y2="90" stroke="#8B7355" stroke-width="3" stroke-dasharray="5,3"/>
+      <line x1="260" y1="90" x2="340" y2="100" stroke="#8B7355" stroke-width="3" stroke-dasharray="5,3"/>
+      
+      <!-- Trees -->
+      <circle cx="140" cy="60" r="20" fill="#3a7a3a" opacity="0.6"/>
+      <circle cx="120" cy="55" r="15" fill="#4a8a4a" opacity="0.5"/>
+      <circle cx="200" cy="50" r="22" fill="#3a7a3a" opacity="0.6"/>
+      <circle cx="170" cy="48" r="18" fill="#4a8a4a" opacity="0.5"/>
+      <circle cx="250" cy="55" r="18" fill="#3a7a3a" opacity="0.6"/>
+      <circle cx="290" cy="50" r="20" fill="#4a8a4a" opacity="0.5"/>
+      <circle cx="220" cy="58" r="16" fill="#3a7a3a" opacity="0.5"/>
+      <rect x="135" y="78" width="5" height="15" fill="#6b5b4e"/>
+      <rect x="195" y="68" width="5" height="18" fill="#6b5b4e"/>
+      <rect x="285" y="68" width="5" height="18" fill="#6b5b4e"/>
+      
+      <!-- Foot bridge -->
+      <rect x="180" y="98" width="30" height="4" fill="#8B4513"/>
+      <text x="195" y="115" text-anchor="middle" font-size="8" fill="#8B4513">木桥</text>
+      
+      <!-- Foot bridge 2 -->
+      <rect x="270" y="95" width="25" height="4" fill="#8B4513"/>
+      <text x="282" y="112" text-anchor="middle" font-size="8" fill="#8B4513">木桥</text>
+      
+      <!-- Beach -->
+      <path d="M 340 70 Q 400 60 460 65 Q 520 70 580 60 L 580 160 L 340 160 Z" fill="#e8d4a0"/>
+      <!-- Water -->
+      <path d="M 400 140 Q 450 150 500 145 Q 550 140 580 145 L 580 200 L 400 200 Z" fill="#3a7aaa" opacity="0.4"/>
+      <path d="M 580 60 L 580 145 L 600 145 L 600 55 Z" fill="#3a7aaa" opacity="0.5"/>
+      
+      <!-- People on beach -->
+      <text x="420" y="110" font-size="16">👩‍👧</text>
+      
+      <!-- Distance label -->
+      <text x="220" y="140" text-anchor="middle" font-size="11" fill="#666">~ 150 码 (约 140 米)</text>
+      <text x="220" y="155" text-anchor="middle" font-size="10" fill="#666">穿过树林 + 两座小木桥</text>
+      
+      <!-- Labels -->
+      <text x="100" y="130" font-size="10" fill="#666">🌲 树林小径</text>
+      <text x="400" y="155" font-size="10" fill="#666">🏖️ Murdock Beach</text>
+    </svg>
+    <div class="diagram-caption">从停车场到海滩的路线示意</div>
+  </div>
+
+  <ul>
+    <li>从停车场到海滩只有 <strong>约 150 码（140米）</strong> 的平坦小路</li>
+    <li>穿过树林，经过两座小木桥跨过 Murdock Creek</li>
+    <li>路很好走，5 岁小朋友完全没问题</li>
+  </ul>
+</div>
+
+<!-- === SECTION 4: TIDE INFO === -->
+<div class="card">
+  <h2>🌊 潮汐信息 — 5月9日（关键！）</h2>
+  
+  <div class="weather-row">
+    <div class="emoji">🌊</div>
+    <div class="temp">最佳赶海时间</div>
+    <div style="font-size:1.3em; font-weight:bold; color:var(--ocean);">12:00 ~ 4:30 PM</div>
+  </div>
+
+  <table class="tide-table">
+    <tr><th>时间 (PDT)</th><th>潮汐</th><th>潮高 (ft)</th><th>说明</th></tr>
+    <tr><td>00:43 AM</td><td>低潮</td><td>5.56 ft</td><td>深夜，不用管</td></tr>
+    <tr><td>5:11 AM</td><td>高潮</td><td>5.88 ft</td><td>清晨涨潮</td></tr>
+    <tr class="best"><td><strong>2:46 PM</strong></td><td><strong>低潮</strong></td><td><strong>0.92 ft ✅</strong></td><td><strong>🎯 最佳赶海时间！海滩大面积露出</strong></td></tr>
+    <tr><td>11:04 PM</td><td>高潮</td><td>5.76 ft</td><td>傍晚涨潮</td></tr>
+  </table>
+
+  <div class="info-box success">
+    <strong>⏱️ 时间建议：</strong><br>
+    你计划 <strong>12:00 PM 到达</strong> — 完美！退潮期间海滩会逐渐露出更多区域，2:46 PM 是最低点。<br>
+    • 12:00 PM 到达 → 潮水还在退，先在海滩上部找找<br>
+    • 1:00 - 3:30 PM → 最佳黄金时间，露出化石最多<br>
+    • 4:00 PM 开始涨潮 → 慢慢往回走<br>
+    • 注意：退潮时 <strong>不要走到太远的礁石区</strong>，防止涨潮时被困
+  </div>
+
+  <h3>为什么潮汐这么重要？</h3>
+  <p>Murdock Beach 在高潮时 <strong>几乎没有海滩</strong>！如果满潮去，海水直接拍到了悬崖脚下。必须 <strong>退潮</strong> 时才露出宽阔的卵石滩 —— 这就是化石的藏身之处。5月9日的低潮 0.92 ft 是非常不错的数值（越接近 0 越好），足够好好寻找了。</p>
+</div>
+
+<!-- === SECTION 5: WHAT TO LOOK FOR === -->
+<div class="card">
+  <h2>🔍 找什么？— 化石种类图解</h2>
+  
+  <p>Murdock Beach 有几类值得寻找的"宝藏"，下面是详细的识别指南：</p>
+
+  <!-- Concretion Diagram -->
+  <h3>🥇 1. 结核石 (Concretion) — 最核心的目标！</h3>
+  
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+      <!-- Title -->
+      <text x="300" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e6b8a">结核石对比：普通石头 vs 结核石</text>
+      
+      <!-- Ordinary rock -->
+      <text x="120" y="42" text-anchor="middle" font-size="10" fill="#888">❌ 普通石头</text>
+      <circle cx="120" cy="80" r="30" fill="#a0a0a0" stroke="#888" stroke-width="1"/>
+      <circle cx="120" cy="80" r="30" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="3"/>
+      <text x="120" y="130" text-anchor="middle" font-size="8" fill="#666">形状不规则</text>
+      <text x="120" y="142" text-anchor="middle" font-size="8" fill="#666">边缘锋利</text>
+      <text x="120" y="154" text-anchor="middle" font-size="8" fill="#666">多种颜色混合</text>
+
+      <!-- Concretion -->
+      <text x="310" y="42" text-anchor="middle" font-size="10" fill="#2e6b8a">✅ 结核石 (Concretion)</text>
+      <ellipse cx="310" cy="80" rx="35" ry="30" fill="#b8a88a" stroke="#8B7355" stroke-width="2"/>
+      <ellipse cx="310" cy="80" rx="20" ry="18" fill="none" stroke="#8B7355" stroke-width="0.5" stroke-dasharray="2"/>
+      <!-- Crack line -->
+      <line x1="290" y1="65" x2="330" y2="95" stroke="#666" stroke-width="0.5" stroke-dasharray="2"/>
+      <text x="310" y="130" text-anchor="middle" font-size="8" fill="#8B7355">圆形/椭圆形</text>
+      <text x="310" y="142" text-anchor="middle" font-size="8" fill="#8B7355">表面光滑</text>
+      <text x="310" y="154" text-anchor="middle" font-size="8" fill="#8B7355">颜色均匀（灰色/棕色）</text>
+      <text x="310" y="166" text-anchor="middle" font-size="8" fill="#8B7355">较重、手感密实</text>
+
+      <!-- Split open -->
+      <text x="490" y="42" text-anchor="middle" font-size="10" fill="#27ae60">🔬 敲开看里面！</text>
+      <!-- left half -->
+      <path d="M 470 60 Q 480 50 490 55 L 490 110 Q 480 115 470 105 Z" fill="#c4b89a" stroke="#8B7355" stroke-width="1"/>
+      <!-- right half -->
+      <path d="M 490 55 Q 500 60 510 70 Q 515 90 510 105 Q 500 115 490 110 Z" fill="#d4c8aa" stroke="#8B7355" stroke-width="1"/>
+      <!-- Fossil inside -->
+      <ellipse cx="480" cy="83" rx="5" ry="8" fill="#d4a84b"/>
+      <text x="490" y="130" text-anchor="middle" font-size="8" fill="#27ae60">里面可能有</text>
+      <text x="490" y="142" text-anchor="middle" font-size="8" fill="#27ae60">🦀 螃蟹化石</text>
+      <text x="490" y="154" text-anchor="middle" font-size="8" fill="#27ae60">🐚 贝壳化石</text>
+      <text x="490" y="166" text-anchor="middle" font-size="8" fill="#27ae60">🌿 海藻化石</text>
+
+      <!-- Arrow from concretion to split -->
+      <text x="400" y="85" text-anchor="middle" font-size="18">→</text>
+    </svg>
+    <div class="diagram-caption">结核石的外观特征和内部结构示意</div>
+  </div>
+
+  <p><strong>结核石 (Concretion)</strong> 是 Murdock Beach 最主要的化石来源。它们是几百万年前矿物质在有机物质（如螃蟹壳、贝壳）周围沉淀形成的圆形硬块。</p>
+
+  <div class="two-col">
+    <div>
+      <h3>🔎 怎么识别结核石？</h3>
+      <ul>
+        <li><strong>形状：</strong>圆形、椭圆形、近似球形（像高尔夫球到垒球大小）</li>
+        <li><strong>表面：</strong>比普通石头光滑，摸起来比较细腻</li>
+        <li><strong>颜色：</strong>通常为均匀的灰色、灰褐色或土黄色</li>
+        <li><strong>重量：</strong>比同样大小的普通石头重，手感密实</li>
+        <li><strong>纹理：</strong>有时表面能看到细微的裂痕或纹路</li>
+        <li>有些人形容它们像 <strong>"Wilma Flintstone 的项链珠子"</strong></li>
+      </ul>
+    </div>
+    <div>
+      <h3>🎯 哪些最可能有化石？</h3>
+      <ul>
+        <li><strong>特别圆的</strong> — 完整包裹了核心</li>
+        <li><strong>有可见裂缝或接缝的</strong> — 容易敲开</li>
+        <li><strong>大小适中的</strong> — 拳头大小到棒球大小最佳</li>
+        <li><strong>看起来像有个"核"的</strong></li>
+        <li>太小的（< 2cm）一般含化石机会小</li>
+        <li>太大的（> 20cm）太重，不好带回家处理</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🥈 2. 玉髓化的贝壳化石 (Agatized Shell Fossils)</h3>
+  <div class="info-box">
+    <strong>什么是玉髓化？</strong> 就是贝壳里的物质被替换成了玉髓/玛瑙（agate），变得半透明，非常漂亮！在 Murdock Beach 可以找到玉髓化的蛤蜊化石（agatized acila clam），保存非常完好。
+  </div>
+  <ul>
+    <li><strong>外观：</strong>看起来像半透明的贝壳印在石头上</li>
+    <li><strong>颜色：</strong>白色、奶油色、淡黄色、有时带条纹</li>
+    <li><strong>手感：</strong>光滑，略有蜡质光泽</li>
+    <li>主要在 <strong>卵石滩的石头堆</strong> 中寻找</li>
+  </ul>
+
+  <h3>🥉 3. 玛瑙 (Agate) & 碧玉 (Jasper)</h3>
+  <p>这里还能找到漂亮的玛瑙和 <strong>Poppy Jasper（罂粟碧玉）</strong>（红色底上有黄色/橙色斑点）。O 泡泡玛瑙 (Orbicular Jasper) 也经常被报道。</p>
+
+  <h3>4. 石化海藻 (Petrified Kelp)</h3>
+  <div class="info-box">
+    据 The Fossil Forum 的报道，Murdock Beach 有独特的 <strong>圆柱状石化海藻</strong> —— 像圆柱形的石头，截面有奇怪的长方形核心。还有球形的"浮子"部分，是巨藻（bull kelp）的化石。
+  </div>
+
+  <h3>5. 海玻璃 (Sea Glass)</h3>
+  <p>磨砂玻璃碎片，颜色有绿色、棕色、白色、蓝色等。在卵石中被海浪打磨得非常光滑。</p>
+</div>
+
+<!-- === SECTION 6: WHERE TO SEARCH === -->
+<div class="card">
+  <h2>🗺️ 到了海滩怎么找？— 实操指南</h2>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="280" fill="#f0e6d3" rx="10"/>
+      
+      <!-- Cliff -->
+      <path d="M 0 40 Q 100 50 200 35 Q 300 45 400 38 Q 500 50 600 40 L 600 80 L 0 80 Z" fill="#7a6a5a"/>
+      <text x="300" y="65" text-anchor="middle" font-size="10" fill="#ddd">🌲 树林 / 悬崖</text>
+      
+      <!-- High tide line -->
+      <line x1="0" y1="85" x2="600" y2="85" stroke="#3a7aaa" stroke-width="2" stroke-dasharray="8,4" opacity="0.5"/>
+      <text x="550" y="82" font-size="8" fill="#3a7aaa" opacity="0.6">高潮线</text>
+      
+      <!-- Beach -->
+      <rect x="0" y="85" width="600" height="130" fill="#e8d4a0" rx="0"/>
+      
+      <!-- Tide line movement -->
+      <path d="M 0 200 Q 150 190 300 195 Q 450 200 600 190" fill="none" stroke="#3a7aaa" stroke-width="2" stroke-dasharray="4,4"/>
+      <text x="550" y="195" font-size="8" fill="#3a7aaa">低潮线 (2:46PM)</text>
+
+      <!-- mid tide line -->
+      <path d="M 0 140 Q 150 135 300 140 Q 450 145 600 135" fill="none" stroke="#3a7aaa" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+      <text x="550" y="138" font-size="8" fill="#3a7aaa" opacity="0.6">中潮线 (12PM)</text>
+      
+      <!-- Water -->
+      <path d="M 0 195 Q 150 205 300 200 Q 450 205 600 195 L 600 280 L 0 280 Z" fill="#3a7aaa" opacity="0.4"/>
+      
+      <!-- Search zone 1: driffline -->
+      <rect x="20" y="86" width="160" height="20" fill="#d4a84b" opacity="0.2" rx="5"/>
+      <text x="100" y="100" text-anchor="middle" font-size="10" fill="#8B6914">① 漂流物线 (Driffline)</text>
+      
+      <!-- Search zone 2: mid beach -->
+      <rect x="200" y="105" width="180" height="30" fill="#27ae60" opacity="0.2" rx="5"/>
+      <text x="290" y="115" text-anchor="middle" font-size="10" fill="#1a7a3a">② 卵石滩中部 (最佳!)</text>
+      <text x="290" y="128" text-anchor="middle" font-size="8" fill="#1a7a3a">★★★ 重点搜索区</text>
+      
+      <!-- Search zone 3: tide pools -->
+      <rect x="30" y="150" width="160" height="40" fill="#2980b9" opacity="0.15" rx="5"/>
+      <text x="110" y="168" text-anchor="middle" font-size="10" fill="#1a5a8a">③ 潮池附近</text>
+      <text x="110" y="182" text-anchor="middle" font-size="8" fill="#1a5a8a">退潮时露出</text>
+      
+      <!-- People -->
+      <text x="380" y="120" font-size="20">👩‍👧</text>
+      <text x="430" y="125" font-size="16">🔨</text>
+      
+      <!-- Crab icon -->
+      <text x="460" y="150" font-size="24">🦀</text>
+      
+      <!-- Labels -->
+      <text x="50" y="240" font-size="10" fill="#666">⬆️ 往右（向西）走，卵石更多</text>
+      <text x="350" y="240" font-size="10" fill="#666">⬇️ 往左（向东）走，沙滩更多</text>
+      
+      <!-- Path marker -->
+      <text x="300" y="260" text-anchor="middle" font-size="9" fill="#666">箭头入口 ← 🅿️ → 建议往右走</text>
+    </svg>
+    <div class="diagram-caption">海滩搜索区域示意 — 建议往右（西）走</div>
+  </div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="time">Step 1: 先向右走</div>
+      <div class="label">从入口下到海滩后，<strong>往右（向西）走</strong>。根据多位化石猎人的经验，西侧的卵石滩更多，化石也更丰富。走大约 10-15 分钟就能看到大量被海浪冲刷出来的卵石和结核石。</div>
+    </div>
+    <div class="step">
+      <div class="time">Step 2: 找卵石滩，不要找沙滩</div>
+      <div class="label">结核石和化石主要藏在 <strong>卵石滩（pebble/cobble beach）</strong> 中。纯沙子的地方不会有结核石。走到卵石滩后，蹲下来仔细看。</div>
+    </div>
+    <div class="step">
+      <div class="time">Step 3: 重点搜索三个区域</div>
+      <div class="label">
+        <strong>① 漂流物线 (Driffline)：</strong> 高潮时海水冲刷出来的线，各种石头被海浪集中到一起 — 这是最容易发现的地方！<br>
+        <strong>② 卵石滩中部：</strong> 中潮线与低潮线之间的卵石区，结核石最多 <br>
+        <strong>③ 潮池 (Tide Pools)：</strong> 退潮时露出的潮池周围，石头比较新鲜
+      </div>
+    </div>
+    <div class="step">
+      <div class="time">Step 4: 让孩子也参与</div>
+      <div class="label">
+        给女儿一个小桶，让她找 <strong>"圆圆的特别的石头"</strong>。小朋友的视力好、观察力敏锐，经常能发现大人忽略的东西！可以玩 <strong>"寻宝游戏"</strong> — 看谁先找到圆石头、彩色石头、有花纹的石头。
+      </div>
+    </div>
+    <div class="step">
+      <div class="time">Step 5: 不要只捡表面的</div>
+      <div class="label">
+        在卵石滩表面翻一翻，<strong>下面埋着的石头</strong> 往往更新鲜、更完整。用手或小铲子翻一翻卵石层。另外注意 <strong>被海浪半埋的石头</strong>，它们刚从地层中冲刷出来。
+      </div>
+    </div>
+    <div class="step">
+      <div class="time">Step 6: 怎么看有没有化石</div>
+      <div class="label">
+        找到圆的结核石后，先 <strong>仔细观察表面</strong>。有时化石已经部分暴露在外了（贝壳纹路、螃蟹爪印等）。完全光滑封闭的结核石可以考虑带回家敲开。
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box danger">
+    <strong>🚨 安全提醒：</strong><br>
+    • 不要走到太远的石头上，防止滑倒<br>
+    • 注意涨潮！4:00 PM 左右开始涨潮，预留返回时间<br>
+    • 有些石头长满海藻会很滑，踩稳了再走<br>
+    • 给女儿穿防滑鞋或水鞋
+  </div>
+</div>
+
+<!-- === SECTION 7: HOW TO OPEN CONCRETIONS === -->
+<div class="card">
+  <h2>🔨 怎么打开结核石？— 两种方法</h2>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="200" fill="#f8f4ef" rx="10"/>
+      
+      <!-- Method 1: In-field -->
+      <text x="150" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e6b8a">方法一：现场敲开 🪨</text>
+      
+      <!-- Concretion -->
+      <ellipse cx="100" cy="75" rx="30" ry="25" fill="#b8a88a" stroke="#8B7355" stroke-width="2"/>
+      
+      <!-- Hammer -->
+      <rect x="125" y="45" width="35" height="8" fill="#888" rx="2" transform="rotate(-20, 125, 45)"/>
+      <rect x="155" y="40" width="35" height="6" fill="#6b5b4e" rx="2" transform="rotate(-20, 155, 40)"/>
+      <text x="178" y="42" font-size="9" fill="#6b5b4e">锤</text>
+      
+      <!-- Chisel -->
+      <rect x="130" y="65" width="5" height="25" fill="#aaa" rx="1" transform="rotate(-20, 130, 65)"/>
+      <text x="130" y="60" font-size="7" fill="#888">凿子</text>
+      
+      <!-- Bag -->
+      <text x="100" y="115" text-anchor="middle" font-size="8" fill="#666">收拾碎片</text>
+      
+      <!-- VS -->
+      <text x="250" y="100" text-anchor="middle" font-size="20" font-weight="bold" fill="#888">VS</text>
+      
+      <!-- Method 2: Freeze-thaw -->
+      <text x="420" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e6b8a">方法二：冻融法 ❄️☀️</text>
+      
+      <!-- Bucket -->
+      <rect x="350" y="60" width="60" height="50" fill="#5a8aaa" rx="5"/>
+      <rect x="350" y="60" width="60" height="10" fill="#3a6a8a" rx="5"/>
+      <text x="380" y="88" text-anchor="middle" font-size="9" fill="white">💧水</text>
+      
+      <!-- Concretion in bucket -->
+      <circle cx="380" cy="82" r="12" fill="#b8a88a" stroke="#8B7355" stroke-width="1.5"/>
+      
+      <!-- Freeze cycle -->
+      <text x="380" y="130" text-anchor="middle" font-size="8" fill="#666">泡水几天</text>
+      <text x="380" y="140" text-anchor="middle" font-size="8" fill="#666">→ 冷冻 → 解冻</text>
+      <text x="380" y="150" text-anchor="middle" font-size="8" fill="#666">反复几次自动裂开</text>
+      
+      <text x="460" y="88" text-anchor="middle" font-size="8" fill="#666">无需工具</text>
+      <text x="460" y="100" text-anchor="middle" font-size="8" fill="#666">保护化石</text>
+    </svg>
+    <div class="diagram-caption">两种打开结核石的方法</div>
+  </div>
+
+  <h3>⚡ 方法一：当场敲开（推荐带回家再敲）</h3>
+  <div class="info-box warning">
+    <strong>⚠️ 注意：在现场敲开可能会损伤化石，也可能碎片飞溅伤人。</strong><br>建议把有潜力的结核石带回家再处理。
+  </div>
+  <ol>
+    <li><strong>戴好护目镜和手套</strong> — 碎片会飞！</li>
+    <li>仔细找结核石表面的 <strong>自然裂缝或接缝</strong></li>
+    <li>把凿子放在裂缝处，与表面成 <strong>略微倾斜的角度</strong></li>
+    <li>用 rock hammer <strong>轻轻敲击</strong>，不要用猛力</li>
+    <li>敲一圈，观察裂缝是否在扩大</li>
+    <li>继续轻敲直到结核石 <strong>自然裂开</strong></li>
+    <li>如果看到化石了，马上停止，改用小工具精细处理</li>
+  </ol>
+  <p><strong>技巧分享：</strong> 老手说关键是"控制力度，不要想一次砸开"。轻敲一圈比猛砸一下效果好得多。如果里面真有螃蟹化石，猛力一砸可能把螃蟹也砸碎了！</p>
+
+  <h3>❄️ 方法二：冻融法（最安全、最推荐）</h3>
+  <ol>
+    <li>把结核石放在 <strong>水桶里浸泡几天</strong>，让水完全渗透</li>
+    <li>拿出来放进 <strong>冰箱冷冻室</strong> 过夜</li>
+    <li>拿出来自然 <strong>解冻</strong></li>
+    <li>重复 <strong>泡水→冷冻→解冻</strong> 几次</li>
+    <li>水分膨胀和收缩会让结核石 <strong>沿自然纹理裂开</strong></li>
+    <li>这样裂开最保护里面的化石</li>
+  </ol>
+  <p><strong>为什么这个方法好？</strong> 水结冰膨胀会产生均匀的压力，让石头沿着最薄弱的纹理裂开，不会破坏内部的化石。这是专业化石采集者常用的方法。</p>
+</div>
+
+<!-- === SECTION 8: EQUIPMENT CHECKLIST === -->
+<div class="card">
+  <h2>🎒 装备清单 — 你还有什么需要带？</h2>
+  
+  <p><strong>✅ 你已经有的：</strong> Rock hammer、凿子、护目镜、手套、背包、桶子</p>
+
+  <h3>📋 完整装备清单</h3>
+  <div class="checklist">
+    <div class="item checked"><span class="icon">✅</span> Rock hammer</div>
+    <div class="item checked"><span class="icon">✅</span> 凿子 (Chisel)</div>
+    <div class="item checked"><span class="icon">✅</span> 护目镜 (Goggles)</div>
+    <div class="item checked"><span class="icon">✅</span> 手套 (Gloves)</div>
+    <div class="item checked"><span class="icon">✅</span> 背包</div>
+    <div class="item checked"><span class="icon">✅</span> 桶子</div>
+    <div class="item"><span class="icon">🆕</span> <strong>Discover Pass (日票$10或年票$30)</strong></div>
+    <div class="item"><span class="icon">🆕</span> 防水靴或旧运动鞋</div>
+    <div class="item"><span class="icon">🆕</span> 女儿的 <strong>小护目镜 👧</strong></div>
+    <div class="item"><span class="icon">🆕</span> 女儿的小锤子或小工具</div>
+    <div class="item"><span class="icon">🆕</span> 女儿的 <strong>小桶</strong></div>
+    <div class="item"><span class="icon">🆕</span> 水和零食/午餐</div>
+    <div class="item"><span class="icon">🆕</span> 防晒霜 + 帽子</div>
+    <div class="item"><span class="icon">🆕</span> 备用衣物和毛巾</div>
+    <div class="item"><span class="icon">🆕</span> 旧报纸（包石头）</div>
+    <div class="item"><span class="icon">🆕</span> 塑料袋/密封袋</div>
+    <div class="item"><span class="icon">🆕</span> 急救包</div>
+    <div class="item"><span class="icon">🆕</span> 放大镜</div>
+    <div class="item"><span class="icon">🆕</span> 手机充满电 + 充电宝</div>
+    <div class="item"><span class="icon">🆕</span> 创可贴（备着）</div>
+  </div>
+
+  <h3>👧 给女儿的准备特别的</h3>
+  <ul>
+    <li><strong>她自己的小背包</strong> — 装她找到的"宝藏"，让她有参与感</li>
+    <li><strong>她自己的护目镜</strong>（儿童尺寸）— 安全第一！</li>
+    <li><strong>防晒帽 + 防晒霜</strong> — 海滩没遮阴</li>
+    <li><strong>零食和饮料</strong> — 小朋友找东西累了需要补充能量</li>
+    <li><strong>防水裤/雨鞋</strong> — 海滩可能有泥和水</li>
+    <li><strong>备用衣裤袜</strong> — 几乎肯定会弄湿弄脏！</li>
+    <li><strong>毛巾</strong> — 擦手擦脚</li>
+    <li><strong>奖励小惊喜</strong> — 如果她帮忙找了很多石头</li>
+  </ul>
+</div>
+
+<!-- === SECTION 9: PHOTO GUIDE === -->
+<div class="card">
+  <h2>📸 找到什么了？— 识别对照图</h2>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="180" fill="#f8f4ef" rx="10"/>
+      <text x="300" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e6b8a">Murdock Beach 常见发现识别指南</text>
+      
+      <!-- Item 1 -->
+      <text x="80" y="45" text-anchor="middle" font-size="10" font-weight="bold">🟤 完整结核石</text>
+      <ellipse cx="80" cy="80" rx="22" ry="18" fill="#b8a88a" stroke="#8B7355" stroke-width="1.5"/>
+      <text x="80" y="115" text-anchor="middle" font-size="7" fill="#666">圆形、光滑</text>
+      <text x="80" y="127" text-anchor="middle" font-size="7" fill="#666">均匀灰色</text>
+
+      <!-- Item 2 -->
+      <text x="200" y="45" text-anchor="middle" font-size="10" font-weight="bold">🦀 螃蟹结核（已开）</text>
+      <ellipse cx="195" cy="78" rx="18" ry="15" fill="#c4b89a" stroke="#8B7355" stroke-width="1"/>
+      <ellipse cx="205" cy="78" rx="16" ry="14" fill="#d4c8aa" stroke="#8B7355" stroke-width="1"/>
+      <text x="200" cy="82" text-anchor="middle" font-size="14">🦀</text>
+      <text x="200" y="115" text-anchor="middle" font-size="7" fill="#666">⭐ 最想要的！</text>
+      <text x="200" y="127" text-anchor="middle" font-size="7" fill="#666">螃蟹壳、爪、腿</text>
+
+      <!-- Item 3 -->
+      <text x="330" y="45" text-anchor="middle" font-size="10" font-weight="bold">🐚 玉髓化贝壳</text>
+      <ellipse cx="330" cy="80" rx="20" ry="12" fill="none" stroke="#d4a84b" stroke-width="1.5" transform="rotate(-15, 330, 80)"/>
+      <ellipse cx="330" cy="80" rx="14" ry="8" fill="none" stroke="#d4a84b" stroke-width="1" transform="rotate(-15, 330, 80)"/>
+      <text x="330" y="115" text-anchor="middle" font-size="7" fill="#666">半透明白色</text>
+      <text x="330" y="127" text-anchor="middle" font-size="7" fill="#666">有贝壳纹路</text>
+
+      <!-- Item 4 -->
+      <text x="460" y="45" text-anchor="middle" font-size="10" font-weight="bold">💎 玛瑙/碧玉</text>
+      <circle cx="460" cy="80" r="15" fill="#c4a86a" stroke="#b8944a" stroke-width="1"/>
+      <circle cx="455" cy="75" r="4" fill="#d4b86a"/>
+      <circle cx="465" cy="85" r="3" fill="#b4843a"/>
+      <text x="460" y="115" text-anchor="middle" font-size="7" fill="#666">半透明</text>
+      <text x="460" y="127" text-anchor="middle" font-size="7" fill="#666">彩色条纹</text>
+
+      <!-- Item 5 -->
+      <text x="555" y="45" text-anchor="middle" font-size="10" font-weight="bold">🧊 海玻璃</text>
+      <rect x="542" y="70" width="10" height="10" fill="#8ac4d4" rx="2" opacity="0.7"/>
+      <rect x="555" y="73" width="8" height="8" fill="#7aaa6a" rx="2" opacity="0.6"/>
+      <text x="555" y="115" text-anchor="middle" font-size="7" fill="#666">磨砂玻璃</text>
+      <text x="555" y="127" text-anchor="middle" font-size="7" fill="#666">绿/棕/蓝色</text>
+    </svg>
+    <div class="diagram-caption">你在海滩上可能找到的各种"宝藏"</div>
+  </div>
+
+  <h3>⚖️ 要不要捡？快速决定指南</h3>
+  <table class="tide-table">
+    <tr><th>找到的东西</th><th>捡不捡？</th><th>为什么</th></tr>
+    <tr><td>圆形光滑的灰色结核石</td><td style="color:var(--success);font-weight:bold">✅ 必捡！</td><td>最可能有化石</td></tr>
+    <tr><td>有贝壳纹路的半透明石头</td><td style="color:var(--success);font-weight:bold">✅ 必捡！</td><td>玉髓化贝壳化石</td></tr>
+    <tr><td>彩色半透明石头</td><td style="color:var(--success);font-weight:bold">✅ 捡！</td><td>可能是玛瑙</td></tr>
+    <tr><td>磨砂玻璃碎片</td><td style="color:var(--highlight);font-weight:bold">🔸 可选</td><td>海玻璃，漂亮</td></tr>
+    <tr><td>普通灰色石头（不规则）</td><td style="color:#888">❌ 不捡</td><td>就是普通石头</td></tr>
+    <tr><td>太大的结核石 (>20cm)</td><td style="color:#888">❌ 不捡</td><td>太重不好处理</td></tr>
+  </table>
+</div>
+
+<!-- === SECTION 10: DAUGHTER TIPS === -->
+<div class="card">
+  <h2>👧 带5岁女儿寻宝特别技巧</h2>
+  
+  <div class="two-col">
+    <div>
+      <h3>🎮 变成游戏</h3>
+      <ul>
+        <li>说成 <strong>"寻找恐龙蛋"</strong> 或 <strong>"宝藏猎人"</strong> 冒险</li>
+        <li>比赛谁先找到 <strong>"最圆的石头"</strong></li>
+        <li>比赛谁先找到 <strong>"最漂亮的彩色石头"</strong></li>
+        <li>找到了就大声欢呼！让孩子有成就感</li>
+      </ul>
+    </div>
+    <div>
+      <h3>🛡️ 安全第一</h3>
+      <ul>
+        <li>女儿必须一直戴 <strong>护目镜</strong></li>
+        <li>不要让她自己拿锤子砸石头</li>
+        <li>告诉她 <strong>"危险的石头让爸爸来敲"</strong></li>
+        <li>潮水池的水很冷，别让踩太久</li>
+        <li>留意海藻很滑，牵着她的手</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two-col">
+    <div>
+      <h3>🎯 给她的小任务</h3>
+      <ul>
+        <li>找"圆圆的球球石头"</li>
+        <li>找"闪闪亮的石头"</li>
+        <li>找"上面有花纹的石头"</li>
+        <li>帮爸爸把石头装进桶里</li>
+        <li>数一数找到了多少个结核石</li>
+      </ul>
+    </div>
+    <div>
+      <h3>🍽️ 行程安排建议</h3>
+      <ul>
+        <li>12:00 PM 到达海滩</li>
+        <li>12:00-12:30 PM 在海滩上野餐午饭</li>
+        <li>12:30-3:00 PM 寻宝时间</li>
+        <li>3:00-3:30 PM 休息、吃零食</li>
+        <li>3:30-4:00 PM 收拾撤退</li>
+        <li>开车回去的路上女儿会在车上睡着 😄</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- === SECTION 11: REFERENCES === -->
+<div class="card">
+  <h2>📚 参考资源 & 进一步学习</h2>
+  <ul>
+    <li><a href="https://peninsulapassage.com/murdock-beach/" target="_blank">Peninsula Passage — Murdock Beach 详细游记</a></li>
+    <li><a href="https://wa100.dnr.wa.gov/olympic-peninsula/murdock-beach" target="_blank">WA100 DNR — Murdock Beach 地质介绍</a></li>
+    <li><a href="https://www.beachcombingmagazine.com/blogs/news/concretions" target="_blank">Beachcombing Magazine — 结核石采集指南</a></li>
+    <li><a href="https://rockseeker.com/concretions/" target="_blank">Rock Seeker — 什么是结核石？</a></li>
+    <li><a href="https://www.youtube.com/watch?v=sRFc2OA19DA" target="_blank">YouTube: Fossil Concretions (Crabs) at Murdock Beach</a></li>
+    <li><a href="https://www.youtube.com/watch?v=5zdVemnIOMA" target="_blank">YouTube: Fossil Hunting Murdock Beach</a></li>
+    <li><a href="https://www.youtube.com/watch?v=4Ljy0uvuty8" target="_blank">YouTube: Agate & Fossil Hunting on Murdock Beach</a></li>
+    <li><a href="https://www.youtube.com/watch?v=U7y6ZTonT8Q" target="_blank">YouTube: 古生物学家 Kirk Johnson 在 WA 海岸找结核石</a></li>
+    <li><a href="https://shuntool.com/article/how-to-open-washington-crab-concretions" target="_blank">ShunTool — 如何打开 WA 螃蟹结核石</a></li>
+    <li><a href="https://www.thefossilforum.com/topic/87850-fossil-hunt-at-murdock-beach/" target="_blank">The Fossil Forum — Murdock Beach 新手分享</a></li>
+    <li><a href="https://discoverpass.wa.gov" target="_blank">购买 Discover Pass</a></li>
+    <li><a href="https://www.tide-forecast.com/locations/Crescent-Bay-Washington/tides/latest" target="_blank">Crescent Bay 潮汐表（最近的低潮预报）</a></li>
+  </ul>
+</div>
+
+<!-- === SECTION 12: QUICK REFERENCE === -->
+<div class="card">
+  <h2>📋 出发前快速检查清单</h2>
+  <div class="checklist">
+    <div class="item"><span class="icon">⬜</span> 买好 Discover Pass ($10)</div>
+    <div class="item"><span class="icon">⬜</span> 手机充满电</div>
+    <div class="item"><span class="icon">⬜</span> 查看天气预报</div>
+    <div class="item"><span class="icon">⬜</span> 准备好所有装备</div>
+    <div class="item"><span class="icon">⬜</span> 给女儿穿好防水衣物</div>
+    <div class="item"><span class="icon">⬜</span> 带上零食和水</div>
+    <div class="item"><span class="icon">⬜</span> 带上备用衣物</div>
+    <div class="item"><span class="icon">⬜</span> 出发！🚗</div>
+  </div>
+
+  <div class="info-box success" style="margin-top:15px;">
+    <strong>🎯 一句话核心策略：</strong><br>
+    12:00 PM 到达 → 先野餐 → 向右走找卵石滩 → 退潮到 2:46 PM 期间专注找圆形的灰色结核石 → 带回家泡水冻融处理 → 敲开找出螃蟹化石 🦀
+  </div>
+  <div style="text-align:center; font-size:2em; margin-top:15px; animation: pulse 2s infinite;">
+    🦀 🐚 🪨 🔨 💎
+  </div>
+</div>
+
+<div class="footer">
+  <p>本攻略由 Hermes AI 助手生成 · 2026年5月9日</p>
+  <p>数据来源：WTA、Peninsula Passage、Beachcombing Magazine、Rock Seeker、The Fossil Forum、NOAA 潮汐数据</p>
+  <p>祝你和女儿找到好多螃蟹化石！🦀🦀🦀</p>
+</div>
+
+</div>
+</body>
+</html>
