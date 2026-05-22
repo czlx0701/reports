@@ -176,7 +176,7 @@ function openDetail(idx){
     html += '<div class="chapter-list">';
     chs.forEach(function(ch, ci){
       var tsLink = 'https://www.youtube.com/watch?v='+v.id+'&t='+ch.ts;
-      var linesHtml = ch.preview.replace(/\n/g, '\n');
+      var linesHtml = ch.preview.replace(/\\n/g, '\n');
       html += '<div class="chapter-item">'+
         '<div class="chapter-header" onclick="toggleChapter(this)">'+
           '<a class="chapter-ts" href="'+tsLink+'" target="_blank" onclick="event.stopPropagation()">'+ch.ts_str+' – '+ch.end_ts_str+'</a>'+
@@ -206,13 +206,11 @@ function toggleChapter(el){
   if(arrow) arrow.textContent = el.classList.contains('open') ? '▲' : '▼';
 }
 
-// Fetch data from external JSON
 fetch('spark_webinars_data.json').then(function(r){ return r.json(); }).then(function(data){
   VIDEOS = data.videos;
   CHAPTERS = data.chapters;
   TOPIC_ORDER = data.topic_order;
 
-  // Stats
   var totalTranscripts = VIDEOS.filter(function(v){ return v.h; }).length;
   document.getElementById('stats').innerHTML =
     '<div class="stat-card"><div class="num">'+VIDEOS.length+'</div><div class="label">总视频</div></div>'+
@@ -221,7 +219,6 @@ fetch('spark_webinars_data.json').then(function(r){ return r.json(); }).then(fun
 
   render();
 
-  // Auto-open from URL hash
   if(location.hash.startsWith('#video-')){
     var idx = parseInt(location.hash.slice(7));
     if(idx > 0) setTimeout(function(){ openDetail(idx); }, 100);
