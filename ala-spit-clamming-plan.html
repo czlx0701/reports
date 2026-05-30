@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏖️ Ala Spit 挖蛤全攻略 — Butter Clam & Cockle · 2026年5月31日</title>
+<style>
+  :root {
+    --sand: #f4e4c1;
+    --ocean: #2e6b8a;
+    --driftwood: #6b5b4e;
+    --sky: #b8d4e8;
+    --highlight: #d4a84b;
+    --danger: #c0392b;
+    --success: #27ae60;
+    --info: #2980b9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(180deg, #1a2a3a 0%, #2e5a7a 30%, var(--sand) 60%, #d4c4a0 100%);
+    color: #2c3e50;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a3a5a 0%, #3a7a9a 50%, #5a9a7a 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '🐚 🪣  🔨  🦀  🧤  ⭐';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: 28px;
+    opacity: 0.3;
+    letter-spacing: 30px;
+    white-space: nowrap;
+    animation: float 20s linear infinite;
+  }
+  @keyframes float {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .hero h1 { font-size: 2em; margin-bottom: 10px; position: relative; }
+  .hero .subtitle { font-size: 1.1em; opacity: 0.9; }
+  .hero .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1em;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+  }
+  .hero .urgent-badge {
+    display: inline-block;
+    background: #dc2626;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    margin-top: 12px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(220,38,38,0); }
+  }
+  .hero .tide-info {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+  .hero .tide-info .time { font-size: 1.4em; font-weight: bold; color: #ffd700; }
+  .hero .tide-info .level { font-size: 0.9em; opacity: 0.8; }
+
+  /* Cards */
+  .card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .card h2 {
+    font-size: 1.5em;
+    color: var(--ocean);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--sand);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card h3 {
+    font-size: 1.15em;
+    color: var(--driftwood);
+    margin: 15px 0 8px 0;
+  }
+  .card ul, .card ol { padding-left: 20px; margin: 8px 0; }
+  .card li { margin-bottom: 6px; }
+
+  /* Info boxes */
+  .info-box {
+    background: #e8f4fd;
+    border-left: 4px solid var(--info);
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .info-box.warning { background: #fef9e7; border-left-color: var(--highlight); }
+  .info-box.danger { background: #fdedec; border-left-color: var(--danger); }
+  .info-box.success { background: #eafaf1; border-left-color: var(--success); }
+
+  /* Species cards */
+  .species-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .species-card {
+    background: #f8f4ef;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #e0d8cc;
+  }
+  .species-card h4 { font-size: 1em; display: flex; align-items: center; gap: 6px; }
+  .species-card .abundance { font-size: 0.85em; color: var(--ocean); margin-top: 4px; }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    margin: 15px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--ocean), var(--highlight));
+    border-radius: 2px;
+  }
+  .timeline .step {
+    position: relative;
+    margin-bottom: 18px;
+    padding-left: 15px;
+  }
+  .timeline .step::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--ocean);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--ocean);
+  }
+  .timeline .step.peak::before { background: #e67e22; box-shadow: 0 0 0 2px #e67e22; }
+  .timeline .step .time { font-weight: bold; color: var(--ocean); font-size: 0.9em; }
+  .timeline .step.peak .time { color: #e67e22; }
+  .timeline .step .label { font-size: 0.95em; }
+
+  /* Tide table */
+  .tide-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  .tide-table th { background: var(--ocean); color: white; padding: 8px; font-size: 0.85em; }
+  .tide-table td { padding: 8px; text-align: center; border-bottom: 1px solid #eee; }
+  .tide-table tr.best { background: #fff3cd; font-weight: bold; }
+  .tide-table tr.highlight-low { background: #dbeafe; }
+  .tide-table tr.highlight-high { background: #fef3c7; }
+
+  /* Two col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 10px 0; }
+  @media (max-width: 600px) {
+    .two-col, .species-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Checklist */
+  .checklist { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; margin: 10px 0; }
+  .checklist .item {
+    background: #f9f6f0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e0d8cc;
+  }
+  .checklist .item .icon { font-size: 1.2em; }
+
+  /* Regulations table */
+  .reg-table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  .reg-table th { background: var(--ocean); color: white; padding: 8px; font-size: 0.85em; }
+  .reg-table td { padding: 8px; border-bottom: 1px solid #eee; text-align: center; }
+  .reg-table td:first-child { text-align: left; font-weight: bold; }
+  .reg-table tr.new-rule { background: #fef9e7; }
+
+  /* Weather row */
+  .weather-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f5e6ca, #e8d4b0);
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+  .weather-row .temp { font-size: 1.8em; font-weight: bold; }
+  .weather-row .emoji { font-size: 2.5em; }
+
+  /* Zone cards */
+  .zone-card {
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .zone-card.best { background: #eafaf1; border-left: 4px solid var(--success); }
+  .zone-card.ok { background: #fef9e7; border-left: 4px solid var(--highlight); }
+  .zone-card.avoid { background: #f2f2f2; border-left: 4px solid #999; }
+
+  /* SVG diagram */
+  .diagram-container {
+    background: #f8f4ef;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    border: 2px dashed #ccc;
+  }
+  .diagram-container svg { max-width: 100%; height: auto; }
+  .diagram-caption {
+    text-align: center;
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85em;
+  }
+
+  /* Map */
+  #alamap { height: 500px; border-radius: 12px; margin: 15px 0; border: 2px solid var(--ocean); }
+  .map-buttons { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+  .map-btn {
+    display: inline-block;
+    background: var(--ocean);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+  }
+  .map-btn:hover { opacity: 0.85; }
+  .map-btn.green { background: var(--success); }
+  .map-btn.gray { background: #6b7280; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <h1>🏖️ Ala Spit 挖蛤全攻略</h1>
+  <div class="subtitle">🐚 Butter Clam &amp; Cockle 专精 · 初学者一站式指南</div>
+  <div class="urgent-badge">🚨 最后一天！5月31日本季关闭，下次等明年5月</div>
+  <div class="date-badge">📅 2026年5月31日（星期日）· 从 Bellevue 出发</div>
+  <div class="tide-info">
+    <div>🌊 最佳挖掘低潮</div>
+    <div class="time">⏰ 12:03 PM</div>
+    <div class="level">潮高 -1.77 ft · 极佳低潮，滩涂完全暴露</div>
+    <div style="margin-top:8px; font-size:0.85em; opacity:0.8">
+      🌅 日出 5:14 AM · 日落 9:02 PM · 🌙 月没 4:50 AM · 月出 10:12 PM
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 概览 ==================== -->
+<div class="card">
+  <h2>📍 概览：Ala Spit County Park</h2>
+  <p><strong>Ala Spit</strong>（原名 Ben Ure Spit）位于 Whidbey Island 东北角，Deception Pass 南侧，是华盛顿州知名的公共挖蛤海滩。海滩全长约 1,187 英尺，以 <strong>Butter Clam（黄油蛤）</strong> 和 <strong>Cockle（鸟蛤）</strong> 最为丰富。</p>
+
+  <div class="info-box success">
+    <strong>✅ 为什么选这里？</strong><br>
+    • Butter Clam + Cockle 双料丰富，全 WA 少有的 Cockle 高产地<br>
+    • 5月31日是本季<strong>最后一天</strong>！挖到就是赚到<br>
+    • 距 Bellevue 约 2 小时车程，当天往返完全可行<br>
+    • 海滩平坦，步行距离短（20分钟到尖端），适合带小孩<br>
+    • 停车方便（20+铺装位）+ 季节性便携厕所
+  </div>
+
+  <div class="info-box danger">
+    <strong>⚠️ 重要提醒：Ala Spit 只在 5月1日 ~ 5月31日 开放！</strong><br>
+    周日是本季最后一天。6月1日起关闭到明年5月。不要错过！
+  </div>
+</div>
+
+<!-- ==================== 怎么去 ==================== -->
+<div class="card">
+  <h2>🚗 怎么去？交通 &amp; 停车</h2>
+
+  <h3>从 Bellevue 出发</h3>
+  <ol>
+    <li>I-5 向北 → Exit 230（SR 20 / 往 Whidbey Island）</li>
+    <li>SR 20 西行约 18 英里（过 Deception Pass 桥）</li>
+    <li>过桥后约 1 英里（南侧），右转进入 <strong>Troxell Rd</strong></li>
+    <li>直行 3.7 英里 → 路尽头左转进入 <strong>Geck Road</strong>（看起来像私家车道）</li>
+    <li>开到尽头就是停车场</li>
+  </ol>
+  <p style="margin-top:8px;"><strong>总车程：</strong> Bellevue 出发约 2 小时</p>
+
+  <div class="info-box">
+    <strong>🗺️ 导航定位：</strong><br>
+    搜索 "Ala Spit County Park, 5050 Geck Rd, Oak Harbor, WA 98277"<br>
+    或坐标 <code>48.3987°N, 122.5865°W</code><br>
+    <a href="https://maps.google.com/?q=48.3987,-122.5865" target="_blank" style="color:var(--info);">📍 在 Google Maps 打开</a>
+  </div>
+
+  <h3>停车</h3>
+  <ul>
+    <li>约 <strong>20+ 铺装停车位</strong>，路边也可停</li>
+    <li>季节性提供 <strong>便携厕所</strong> 和垃圾桶</li>
+    <li>不需要 Discover Pass（这是县公园，不是 DNR 土地）</li>
+    <li>但需要 <strong>WDFW 钓鱼/贝类 license</strong>（见下方法规）</li>
+  </ul>
+</div>
+
+<!-- ==================== 潮汐 ==================== -->
+<div class="card">
+  <h2>🌊 潮汐信息 — 5月31日（关键！）</h2>
+
+  <div class="weather-row">
+    <div class="emoji">🌊</div>
+    <div class="temp">最佳挖掘窗口</div>
+    <div style="font-size:1.3em; font-weight:bold; color:var(--ocean);">10:00 AM ~ 2:00 PM</div>
+  </div>
+
+  <table class="tide-table">
+    <tr><th>时间 (PDT)</th><th>潮汐</th><th>潮高 (ft)</th><th>说明</th></tr>
+    <tr class="highlight-high"><td>4:35 AM</td><td>高潮</td><td>9.2 ft</td><td>清晨涨潮</td></tr>
+    <tr class="best"><td><strong>12:03 PM</strong></td><td><strong>低潮</strong></td><td><strong>-1.77 ft ✅</strong></td><td><strong>🎯 黄金时间！滩涂完全露出</strong></td></tr>
+    <tr class="highlight-high"><td>7:42 PM</td><td>高潮</td><td>10.5 ft</td><td>傍晚涨潮</td></tr>
+  </table>
+
+  <div class="info-box success">
+    <strong>⏱️ 时间建议：</strong><br>
+    低潮 -1.77 ft 是 <strong>极佳</strong> 的数值（负值越低越好）。退潮时滩涂会露出大片面积。<br>
+    • <strong>10:00 AM</strong> 到达 → 潮水还在退，先观察地形<br>
+    • <strong>10:30 AM - 2:00 PM</strong> → 黄金挖掘时段<br>
+    • <strong>12:03 PM</strong> → 最低点！去最远端的尖角挖最深处<br>
+    • <strong>2:00 PM 后</strong> → 潮水快速上涨，往回撤
+  </div>
+
+  <h3>为什么潮汐这么重要？</h3>
+  <p>Butter Clam 和 Cockle 主要生活在潮间带中低部。潮水退得越远（负值越低），能挖到的区域越大。-1.77 ft 意味着 <strong>大面积的滩涂会完全暴露在空气中</strong>，包括平时被海水覆盖的最优质砾石区。这种潮汐水平可遇不可求！</p>
+</div>
+
+<!-- ==================== 卫星地图 ==================== -->
+<div class="card">
+  <h2>🛰️ 卫星地图 &amp; 最佳挖掘位置</h2>
+  <p>下面是用卫星图标注的 Ala Spit 各区域 — 点击色块查看说明，拖动缩放查看全貌：</p>
+
+  <div class="map-buttons">
+    <a class="map-btn" onclick="flyTo(48.3987,-122.5865,16)" style="cursor:pointer;">📍 全景</a>
+    <a class="map-btn green" onclick="flyTo(48.4012,-122.5805,19)" style="cursor:pointer;">🟢 最佳区域（尖端）</a>
+    <a class="map-btn" onclick="flyTo(48.3990,-122.5815,18)" style="cursor:pointer;">🟡 尚可区域</a>
+    <a class="map-btn gray" onclick="flyTo(48.3965,-122.5870,17)" style="cursor:pointer;">⚫ 不推荐（泥滩）</a>
+  </div>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <div id="alamap"></div>
+
+  <h3 style="margin-top:12px;">各区域详解</h3>
+
+  <div class="zone-card best">
+    <div style="font-size:24px;">🟢</div>
+    <div>
+      <strong style="color:var(--success);">最佳区域 — Spit 尖端（砾石混合区）</strong><br>
+      <small>走到 spit 的最尖端，找砾石和沙混合的地方。这就是 WDFW 原文说的 <em>"the most productive clam habitat — a relatively small area of mixed gravel towards the point"</em>。Butter Clam 和 Cockle 最密集的地方！</small>
+    </div>
+  </div>
+
+  <div class="zone-card ok">
+    <div style="font-size:24px;">🟡</div>
+    <div>
+      <strong style="color:#d4a84b;">尚可 — 靠近尖端的中段</strong><br>
+      <small>有零星砾石的区域，产量中等。如果尖端人多可以先在这里挖。</small>
+    </div>
+  </div>
+
+  <div class="zone-card avoid">
+    <div style="font-size:24px;">⚫</div>
+    <div>
+      <strong style="color:#999;">不推荐 — 内侧泥滩（南侧 + Spit 内侧）</strong><br>
+      <small>WDFW 原文：<em>"The area inside of the spit and towards the southern end of the beach is primarily mud and sand and is not good clam habitat."</em> 纯泥底质，几乎挖不到东西，别浪费时间。</small>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>💡 如何找到最佳位置：</strong><br>
+    从停车场沿 spit 步行约 20 分钟到最尖端。尖端的滩面应该是 <strong>砾石 + 沙混合</strong> 的质感，而不是纯泥。退潮后 cockle 的呼吸孔（小凹陷）会很明显，那里就是开挖点！
+  </div>
+</div>
+
+<script>
+(function(){
+  const map = L.map('alamap', {
+    center: [48.3987, -122.5865],
+    zoom: 17,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri, Maxar, Earthstar',
+    maxZoom: 20
+  }).addTo(map);
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri',
+    maxZoom: 20,
+    opacity: 0.4
+  }).addTo(map);
+
+  // 🟢 Best zone - spit tip
+  const bestZone = L.polygon([
+    [48.4015, -122.5810],
+    [48.4020, -122.5800],
+    [48.4015, -122.5785],
+    [48.4005, -122.5790],
+    [48.4002, -122.5800],
+    [48.4005, -122.5815]
+  ], {
+    color: '#22c55e', fillColor: '#22c55e', fillOpacity: 0.25, weight: 2, dashArray: '5,5'
+  }).addTo(map);
+  bestZone.bindPopup('<b style="color:#22c55e;">🟢 最佳挖蛤区</b><br>尖端砾石混合底质<br>Butter Clam ⭐⭐⭐⭐<br>Cockle ⭐⭐⭐⭐<br><br><em>"The most productive clam habitat is a relatively small area of mixed gravel towards the point."</em> — WDFW');
+
+  // 🟡 OK zone
+  const okZone = L.polygon([
+    [48.4000, -122.5820],
+    [48.4002, -122.5800],
+    [48.3990, -122.5795],
+    [48.3985, -122.5810],
+    [48.3988, -122.5828],
+    [48.3995, -122.5830]
+  ], {
+    color: '#eab308', fillColor: '#eab308', fillOpacity: 0.15, weight: 1.5, dashArray: '5,5'
+  }).addTo(map);
+  okZone.bindPopup('<b style="color:#eab308;">🟡 尚可区域</b><br>靠近尖端的砾石混合区<br>产量中等');
+
+  // ⚫ Bad zone
+  const badZone = L.polygon([
+    [48.3985, -122.5828],
+    [48.3980, -122.5815],
+    [48.3960, -122.5835],
+    [48.3955, -122.5870],
+    [48.3965, -122.5900],
+    [48.3980, -122.5890],
+    [48.3988, -122.5855],
+    [48.3988, -122.5830]
+  ], {
+    color: '#6b7280', fillColor: '#6b7280', fillOpacity: 0.15, weight: 1.5, dashArray: '5,5'
+  }).addTo(map);
+  badZone.bindPopup('<b style="color:#6b7280;">⚫ 不推荐 — 泥滩</b><br><em>"The area inside of the spit and towards the southern end is primarily mud and sand and is not good clam habitat."</em> — WDFW<br><br>❌ 纯泥底质，几乎挖不到');
+
+  // Parking marker
+  L.marker([48.3935, -122.5860]).addTo(map)
+    .bindPopup('<b>🅿️ 停车场</b><br>5050 Geck Rd, Oak Harbor<br>20+铺装位');
+
+  // Trail start
+  L.marker([48.3950, -122.5845]).addTo(map)
+    .bindPopup('<b>🚶 步道起点</b><br>~20分钟走到尖端');
+
+  // Best spot marker
+  L.marker([48.4012, -122.5800], {
+    icon: L.divIcon({
+      className: '',
+      html: '<div style="background:#22c55e;color:#fff;padding:4px 10px;border-radius:6px;font-weight:700;font-size:12px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.3);">⭐ 最佳位置</div>',
+      iconSize: [80, 24],
+      iconAnchor: [40, 12]
+    })
+  }).addTo(map).bindPopup('<b style="color:#22c55e;">⭐ 从这里开始挖！</b><br>尖端砾石区，Butter Clam + Cockle 最多');
+
+  // Trail route
+  L.polyline([
+    [48.3950,-122.5845],[48.3958,-122.5835],[48.3970,-122.5825],
+    [48.3985,-122.5815],[48.3995,-122.5805],[48.4005,-122.5800],[48.4012,-122.5800]
+  ], { color: '#f59e0b', weight: 3, opacity: 0.7, dashArray: '8,6' }).addTo(map)
+    .bindPopup('🚶 步道路线 → 沿着 Spit 走到尖端');
+
+  // Legend
+  const legend = L.control({position: 'bottomright'});
+  legend.onAdd = function() {
+    const div = L.DomUtil.create('div', '');
+    div.style.background = 'white';
+    div.style.padding = '10px';
+    div.style.borderRadius = '6px';
+    div.style.boxShadow = '0 1px 4px rgba(0,0,0,0.2)';
+    div.style.fontSize = '13px';
+    div.innerHTML = '<b>图例</b><br>' +
+      '<span style="color:#22c55e">■</span> 🟢 最佳区域<br>' +
+      '<span style="color:#eab308">■</span> 🟡 尚可<br>' +
+      '<span style="color:#6b7280">■</span> ⚫ 不推荐<br>' +
+      '📍 停车场 / 起点';
+    return div;
+  };
+  legend.addTo(map);
+  L.control.scale({ imperial: true, metric: true, position: 'bottomleft' }).addTo(map);
+
+  // Fit bounds to show all zones
+  const allZones = L.featureGroup([bestZone, okZone, badZone]);
+  map.fitBounds(allZones.getBounds().pad(0.12));
+})();
+
+function flyTo(lat, lng, zoom) {
+  const map = document.querySelector('#alamap')._leaflet_map;
+  if (map) map.flyTo([lat, lng], zoom, { duration: 1.5 });
+}
+</script>
+
+<!-- ==================== 品种+读滩（合并） ==================== -->
+<div class="card">
+  <h2>🐚 目标品种 &amp; 读滩技巧</h2>
+  <p>Ala Spit 最丰富的是 <strong>Butter Clam（黄油蛤）</strong> 和 <strong>Cockle（鸟蛤）</strong>。下面教你认品种、看痕迹，保证挖到！</p>
+
+  <h3>🧈 品种一：Butter Clam（黄油蛤）</h3>
+  <div class="two-col">
+    <div class="species-card">
+      <h4>Butter Clam <em style="font-weight:normal;font-size:0.85em;">Saxidomus gigantea</em></h4>
+      <div class="abundance">⭐⭐⭐⭐ 极丰富 — 主攻目标</div>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Butter_clam_close_up.jpg" alt="Butter Clam" style="max-width:100%;border-radius:8px;max-height:160px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li>椭圆形、厚实、灰白色壳</li>
+        <li>只有同心生长纹（无放射纹）</li>
+        <li>最大 5 英寸 · 最小 1.5 英寸</li>
+      </ul>
+    </div>
+    <div class="species-card">
+      <h4>🔍 Butter 的 Show（呼吸孔）</h4>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/buttershow3_ODFW.jpg" alt="Butter Clam Show" style="max-width:100%;border-radius:8px;max-height:160px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li><strong>长方形凹痕</strong> — 像扁头螺丝刀插进沙里</li>
+        <li>埋 <strong>6~18 寸</strong> 深（最深）</li>
+        <li><strong>不在正下方！</strong> 往旁边 6~12 寸挖</li>
+        <li>siphon 尖端黑色是标志特征</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:15px;">💖 品种二：Cockle（鸟蛤）</h3>
+  <div class="two-col">
+    <div class="species-card">
+      <h4>Cockle <em style="font-weight:normal;font-size:0.85em;">Clinocardium nuttallii</em></h4>
+      <div class="abundance">⭐⭐⭐⭐ 极丰富 — 主攻目标</div>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Clinocardium_nuttallii_%28Nuttall%27s_cockle%29_1.jpg" alt="Cockle" style="max-width:100%;border-radius:8px;max-height:160px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li>心形，放射状纹路明显</li>
+        <li>浅褐色带斑纹</li>
+        <li>最大 5.5 英寸 · 最小 <strong style="color:#c0392b;">2.5 英寸（2026新规！）</strong></li>
+      </ul>
+    </div>
+    <div class="species-card">
+      <h4>🔍 Cockle 的 Show（呼吸孔）</h4>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/cockle1_ODFW.jpg" alt="Cockle" style="max-width:100%;border-radius:8px;max-height:160px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li><strong>两个并排小孔</strong> — 像铅笔戳的两个点 ( : )</li>
+        <li>只埋 <strong>1~2 寸</strong> 深（极浅！）</li>
+        <li>就在 <strong>正下方</strong>，用手就能扒出来</li>
+        <li>经常直接露在沙面上，弯腰捡</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:18px;">🐴 还可能遇到：Horse Clam（马蛤/gaper）</h3>
+  <div class="two-col">
+    <div class="species-card">
+      <h4>Horse Clam <em style="font-weight:normal;font-size:0.85em;">Tresus nuttallii / capax</em></h4>
+      <div class="abundance" style="color:#d4a84b;">⭐⭐ 偶见 — 退潮越低越容易遇到</div>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/gaper.png" alt="Horse Clam" style="max-width:100%;border-radius:8px;max-height:140px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li>长椭圆形，壳两端有开口（gape）</li>
+        <li>siphon 极长、不能完全缩回壳内</li>
+        <li>siphon 尖端有革质板，常附着藻类/藤壶</li>
+        <li>可长到 8 寸，重达 4 磅</li>
+        <li><strong>独立限额</strong>（不计入40个总限）</li>
+      </ul>
+    </div>
+    <div class="species-card">
+      <h4>🔍 Horse Clam 的 Show</h4>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/gapershow_ODFW.jpg" alt="Horse Clam Show" style="max-width:100%;border-radius:8px;max-height:140px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li><strong>大圆孔（直径 ≥1 寸）</strong> — 比 butter 孔大很多</li>
+        <li>埋 <strong>1~2 英尺</strong> 深（很深！）</li>
+        <li><strong>会喷水！</strong> 走近时 siphon 收缩喷出一尺高的水柱</li>
+        <li>siphon 尖端经常 <strong>直接露出沙面</strong>，一眼就能看到</li>
+        <li>挖法：在孔周围 5 寸外开挖，深挖 1.5 尺</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:18px;">🫘 还可能遇到：Eastern Softshell Clam（东方软壳蛤）</h3>
+  <div class="two-col">
+    <div class="species-card">
+      <h4>E. Softshell <em style="font-weight:normal;font-size:0.85em;">Mya arenaria</em></h4>
+      <div class="abundance" style="color:#d4a84b;">⭐⭐ 偶见</div>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/softshell.png" alt="Eastern Softshell Clam" style="max-width:100%;border-radius:8px;max-height:140px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li>长椭圆形，壳 <strong>薄而脆</strong>，易碎</li>
+        <li>白色/灰色，有黄褐色表皮（periostracum）</li>
+        <li>siphon 尖端黑褐色</li>
+        <li>最大 6 寸，但通常 3-4 寸</li>
+        <li>计入 40 个总限额</li>
+      </ul>
+    </div>
+    <div class="species-card">
+      <h4>🔍 Softshell 的 Show</h4>
+      <div style="text-align:center;margin:8px 0;">
+        <img src="https://www.dfw.state.or.us/mrp/shellfish/bayclams/images/softshell-show_ODFW.jpg" alt="Eastern Softshell Show" style="max-width:100%;border-radius:8px;max-height:140px;object-fit:cover;">
+      </div>
+      <ul style="font-size:0.85em;">
+        <li><strong>两个并排裂缝状孔</strong>（像小切口）</li>
+        <li>埋 <strong>8~14 寸</strong> 深</li>
+        <li>在沙泥混合底质中常见</li>
+        <li>走近时两孔收缩会喷水</li>
+        <li>与 butter 类似深度，但壳更脆，挖时小心</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="font-size:0.9em;color:#666;margin-top:8px;">
+    <strong>注：</strong> Native Littleneck 因底质变化已大幅减少，Ala Spit 几乎挖不到。
+  </p>
+
+  <div class="info-box danger" style="margin-top:18px;">
+    <strong>⭐ 保证能找到的原则：</strong><br>
+    ① 直接去 <strong>Spit 最尖端</strong>（其他区域cockle少）<br>
+    ② 找 <strong>砾石+沙混合</strong> 的底质（不要挖纯泥区）<br>
+    ③ 看到一个小凹陷或两个小孔就开挖 — Cockle 80% 就在那<br>
+    ④ 如果看到扁长方形孔，从旁边 6 寸开始挖 Butter<br>
+    ⑤ 退潮时滩涂上 <strong>贝壳碎片多的地方</strong> 就是好区域
+  </div>
+
+  <h3 style="margin-top:15px;">🪣 挖掘步骤（看完保证挖到）</h3>
+  <ol>
+    <li><strong>选准位置：</strong> 走到 Spit 最尖端（停车场沿 spit 走 20 分钟）</li>
+    <li><strong>观察滩面：</strong> 站着不动看 1 分钟，找 <strong>砾石+沙混合</strong> 的区域</li>
+    <li><strong>找呼吸孔：</strong> ① 两个并排铅笔孔 → Cockle！直接挖 ② 长方形凹陷 → Butter！旁边挖</li>
+    <li><strong>挖法：</strong> Cockle — 用手或耙子，只埋 1-2 寸深；Butter — 铲子挖 6-18 寸</li>
+    <li><strong>捡地上的：</strong> 退潮后经常有 Cockle 直接露在沙面上 — 弯腰捡就是你的</li>
+    <li><strong>用耙子扫：</strong> 如果你懒得弯腰，拿耙子在浅水区扫 — 碰到"咔"一声就是 cockle</li>
+    <li><strong>如果前 10 分钟没挖到：</strong> 换个位置再试。Ala Spit 的尖端区域 cockle 密度很高，不可能空手</li>
+  </ol>
+
+  <div class="info-box success">
+    <strong>✅ 为什么我们保证你能挖到：</strong><br>
+    • WDFW 明确标注 Ala Spit 的 Butter Clam 和 Cockle 是"most abundant"<br>
+    • Cockle 只埋 1-2 寸深，比大多数蛤都好找<br>
+    • -1.77 ft 的低潮会把最好的区域完全暴露<br>
+    • 尖端的砾石区是 cockle 最喜欢的 habitat<br>
+    • 很多 cockle 直接躺在表面，不用挖就能捡<br>
+    • 40 个/人的限额，够一家三口吃好几顿
+  </div>
+</div>
+
+<!-- ==================== 法规限额 ==================== -->
+<div class="card">
+  <h2>📏 2026年法规 &amp; 限额</h2>
+
+  <table class="reg-table">
+    <tr><th>品种</th><th>最小尺寸</th><th>每日限额</th><th>备注</th></tr>
+    <tr>
+      <td>Butter Clam</td>
+      <td>1.5 英寸</td>
+      <td rowspan="2">总计 ≤ 40个<br>或 ≤ 10磅</td>
+      <td>Ala Spit 最丰富</td>
+    </tr>
+    <tr class="new-rule">
+      <td>Cockle 🆕</td>
+      <td><strong style="color:#c0392b;">2.5 英寸</strong><br><small>（2026年新规！原1.5"）</small></td>
+      <td>⚠️ 务必量！小的一定放回去</td>
+    </tr>
+    <tr>
+      <td>Horse Clam</td>
+      <td>—</td>
+      <td>独立限额</td>
+      <td>可能遇到</td>
+    </tr>
+    <tr>
+      <td>E. Softshell</td>
+      <td>—</td>
+      <td>计入40个总限</td>
+      <td>可能遇到</td>
+    </tr>
+    <tr>
+      <td>Geoduck</td>
+      <td>—</td>
+      <td><strong>1个/人/天</strong><br><small>（2026年新规！原3个）</small></td>
+      <td>Ala Spit 较少</td>
+    </tr>
+  </table>
+
+  <div class="info-box warning">
+    <strong>📋 许可证要求：</strong><br>
+    挖蛤需要 <strong>WDFW 钓鱼/贝类许可证</strong>（Shellfish/Seaweed License），可在线上购买：<br>
+    <a href="https://fishhunt.dfw.wa.gov/" target="_blank" style="color:var(--info);">fishhunt.dfw.wa.gov</a><br>
+    • 居民年票约 $15 · 非居民日票约 $12<br>
+    • 手机保存电子版即可，不需要打印<br>
+    • 每人每天可以挖最多 40 个蛤（Horse Clam 不计入），总量不超过 10 磅
+  </div>
+</div>
+
+<!-- ==================== 时间线 ==================== -->
+<div class="card">
+  <h2>⏰ 详细日程安排</h2>
+
+  <div class="timeline">
+    <div class="step">
+    <div class="time">🚗 8:00 AM</div>
+    <div class="label"><strong>从 Bellevue 出发</strong><br><small>I-5 N → Exit 230 SR 20 W → Troxell Rd → Geck Rd</small></div>
+    </div>
+
+    <div class="step">
+    <div class="time">🅿️ 10:00 AM</div>
+      <div class="label"><strong>到达 Ala Spit</strong><br><small>停车、换雨靴、拿工具。出发前打 <strong>1-800-562-5632</strong> 确认 DOH 最新状态！</small></div>
+    </div>
+
+    <div class="step">
+    <div class="time">🚶 10:15 AM</div>
+      <div class="label"><strong>步行到 Spit 尖端</strong><br><small>~20分钟走到头。潮水还在退，边走边观察地形，锁定砾石混合区。</small></div>
+    </div>
+
+    <div class="step peak">
+      <div class="time">🔨 10:30 AM</div>
+      <div class="label"><strong>开始挖蛤！</strong><br><small>潮水持续退去，滩涂不断露出。从尖端外围的砾石区开始挖。</small></div>
+    </div>
+
+    <div class="step peak">
+      <div class="time">⭐ 12:03 PM — 最低潮 -1.77ft</div>
+      <div class="label"><strong>黄金时刻！全力开挖</strong><br><small>滩涂完全暴露，直取尖端最远处的砾石区。Cockle 呼吸孔最明显的时候。</small></div>
+    </div>
+
+    <div class="step">
+      <div class="time">🔄 1:30 PM</div>
+      <div class="label"><strong>潮水上来了</strong><br><small>水位明显上升。慢慢往高处撤，可以先把桶里的蛤冲洗一下。</small></div>
+    </div>
+
+    <div class="step">
+      <div class="time">🧹 2:00 PM</div>
+      <div class="label"><strong>收工！填坑</strong><br><small>WDFW 要求必须把挖过的坑填平。清洗工具，装车。</small></div>
+    </div>
+
+    <div class="step">
+      <div class="time">🍽️ 2:30 PM</div>
+      <div class="label"><strong>午餐 / 顺路逛逛</strong><br><small>Oak Harbor 有餐馆，或开车 10 分钟去 Deception Pass SP 看桥看风景。</small></div>
+    </div>
+
+    <div class="step">
+      <div class="time">🏠 3:30~4:00 PM</div>
+      <div class="label"><strong>返回 Bellevue</strong><br><small>预计 5:30~6:00 PM 到家。蛤蜊放冷藏箱带回来。</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 装备清单 ==================== -->
+<div class="card">
+  <h2>🎒 装备清单</h2>
+
+  <div class="two-col">
+    <div>
+      <strong>✅ 必备品</strong>
+      <div class="checklist">
+        <div class="item"><span class="icon">🎣</span> 贝类许可证</div>
+        <div class="item"><span class="icon">🪣</span> 桶或网袋</div>
+        <div class="item"><span class="icon">🔧</span> 挖蛤工具（铲/耙）</div>
+        <div class="item"><span class="icon">📏</span> 尺子（量 Cockle 2.5"）</div>
+        <div class="item"><span class="icon">👢</span> 雨靴/防水鞋</div>
+        <div class="item"><span class="icon">🧤</span> 手套</div>
+      </div>
+    </div>
+    <div>
+      <strong>👍 推荐</strong>
+      <div class="checklist">
+        <div class="item"><span class="icon">🧴</span> 防晒霜</div>
+        <div class="item"><span class="icon">💧</span> 水 + 零食</div>
+        <div class="item"><span class="icon">🧥</span> 防水外套</div>
+        <div class="item"><span class="icon">📱</span> 充满电 + 离线地图</div>
+        <div class="item"><span class="icon">🪑</span> 折叠椅/坐垫</div>
+        <div class="item"><span class="icon">🧊</span> 冷藏箱/冰袋</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DOH ==================== -->
+<div class="card">
+  <h2>🔬 DOH 生物毒素状态</h2>
+  <p><strong>数据来源：</strong> WA DOH 生物毒素公告 (2026年5月29日更新)</p>
+
+  <div class="info-box danger">
+    <strong>Island County 当前关闭区域：</strong>
+  </div>
+
+  <ul>
+    <li><strong>❌ Saratoga Passage</strong>（含 Penn Cove、Holmes Harbor）— Butter &amp; Varnish Clams 关闭</li>
+    <li><strong>❌ West Whidbey Island</strong>（Bush Point 以南至 Possession Point）— Butter &amp; Varnish Clams 关闭</li>
+    <li><strong>❌ Port Susan</strong> — Butter &amp; Varnish Clams 关闭</li>
+  </ul>
+
+  <div class="info-box success">
+    <strong>✅ Ala Spit 不在上述关闭区域内</strong> — 位于 Whidbey 东北角（Skagit Bay 侧），DOH 状态应为 <strong style="color:var(--success);">OPEN</strong>。<br><br>
+    <strong>但出发当天早上务必打 1-800-562-5632 确认！</strong><br>
+    或查看 <a href="https://doh.wa.gov/shellfishsafety" target="_blank" style="color:var(--info);">DOH Shellfish Safety Map</a>
+  </div>
+
+  <div class="info-box warning">
+    <strong>🔥 食用安全：</strong> DOH 建议 5月~9月期间所有挖到的贝类都要 <strong>彻底煮熟</strong>，以防 Vibrio 细菌感染。
+  </div>
+</div>
+
+<!-- ==================== 技巧 ==================== -->
+<div class="card">
+  <h2>💡 挖蛤技巧</h2>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="200" fill="#f0e6d3" rx="10"/>
+
+      <!-- Spit shape -->
+      <path d="M 50 160 Q 150 140 250 150 L 300 120 L 350 100 L 400 80 Q 450 60 480 60" fill="none" stroke="#8B7355" stroke-width="3"/>
+      <path d="M 50 160 Q 150 170 250 165 L 300 160 L 350 150 L 400 140 Q 450 130 480 130" fill="none" stroke="#8B7355" stroke-width="3"/>
+      <path d="M 50 160 Q 150 140 250 150 L 300 120 L 350 100 L 400 80 Q 450 60 480 60 L 480 130 Q 450 130 400 140 L 350 150 L 300 160 L 250 165 Q 150 170 50 160 Z" fill="#e8d4a0" stroke="#8B7355" stroke-width="1" opacity="0.5"/>
+
+      <!-- Water -->
+      <path d="M 480 60 L 580 30 L 580 200 L 480 130 Z" fill="#3a7aaa" opacity="0.25"/>
+      <path d="M 50 160 L 0 170 L 0 200 L 50 200 Z" fill="#3a7aaa" opacity="0.2"/>
+
+      <!-- Labels -->
+      <text x="100" y="185" text-anchor="middle" font-size="11" fill="#666">🅿️ 停车场</text>
+      <text x="200" y="185" text-anchor="middle" font-size="10" fill="#666">🚶 步道 (~20min)</text>
+
+      <!-- People walking -->
+      <text x="230" y="155" font-size="14">🚶</text>
+      <text x="320" y="120" font-size="14">🚶</text>
+
+      <!-- Best area - tip -->
+      <ellipse cx="465" cy="95" rx="25" ry="18" fill="#22c55e" opacity="0.3"/>
+      <text x="465" y="40" text-anchor="middle" font-size="12" fill="#22c55e" font-weight="bold">🟢 最佳区域</text>
+      <text x="465" y="55" text-anchor="middle" font-size="9" fill="#666">砾石混合区</text>
+      <text x="465" y="68" text-anchor="middle" font-size="9" fill="#22c55e">Butter + Cockle 最多</text>
+
+      <!-- OK area -->
+      <ellipse cx="380" cy="115" rx="25" ry="15" fill="#eab308" opacity="0.3"/>
+      <text x="380" y="100" text-anchor="middle" font-size="9" fill="#eab308">🟡 尚可</text>
+
+      <!-- Bad area -->
+      <ellipse cx="250" cy="145" rx="60" ry="20" fill="#6b7280" opacity="0.25"/>
+      <text x="250" y="142" text-anchor="middle" font-size="10" fill="#999">⚫ 内侧泥滩 — 不推荐</text>
+
+      <!-- Distance arrow -->
+      <line x1="100" y1="60" x2="465" y2="60" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="280" y="55" text-anchor="middle" font-size="9" fill="#999">~0.6 英里</text>
+    </svg>
+    <div class="diagram-caption">Ala Spit 俯视示意 — 🟢绿色=最佳挖掘区 ⚫灰色=泥滩不要挖</div>
+  </div>
+
+  <ol>
+    <li><strong>找呼吸孔</strong> — 退潮后滩涂上有很多小孔或凹陷，那是 clam 的 siphon 孔，下面一定有</li>
+    <li><strong>认 Cockle 的呼吸孔</strong> — Cockle 的孔通常是两个并排的小洞（进水管+出水管），旁边有时有壳缘露出</li>
+    <li><strong>翻石头找</strong> — 小的砾石下面常有 Cockle 躲藏</li>
+    <li><strong>注意底质</strong> — 一定要找 <strong>砾石+沙混合</strong> 的区域，纯泥的地方没有</li>
+    <li><strong>挖完后填坑</strong> — WDFW 法规要求，必须把挖过的坑填平，保护栖息地</li>
+    <li><strong>蛤壳留在海滩上</strong> — 不要把空壳带走，留给生态</li>
+    <li><strong>只挖够吃的量</strong> — 40个/人的限额足够一家人吃几顿了，不要浪费</li>
+  </ol>
+</div>
+
+<!-- ==================== 路线 ==================== -->
+<div class="card">
+  <h2>🗺️ 路线 &amp; 实用信息</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>📍 地址</h3>
+      <p style="font-size:0.9em;">5050 Geck Rd<br>Oak Harbor, WA 98277</p>
+
+      <h3>📞 重要电话</h3>
+      <ul style="font-size:0.9em;">
+        <li><strong>DOH 生物毒素热线：</strong> 1-800-562-5632</li>
+        <li><strong>DOH 办公室：</strong> 360-236-3330</li>
+      </ul>
+    </div>
+    <div>
+      <h3>🔗 实用链接</h3>
+      <ul style="font-size:0.9em;">
+        <li><a href="https://wdfw.wa.gov/places-to-go/shellfish-beaches/240265" target="_blank" style="color:var(--info);">WDFW Ala Spit 页面</a></li>
+        <li><a href="https://doh.wa.gov/shellfishsafety" target="_blank" style="color:var(--info);">DOH Shellfish Safety Map</a></li>
+        <li><a href="https://fishhunt.dfw.wa.gov/" target="_blank" style="color:var(--info);">在线买贝类许可证</a></li>
+        <li><a href="https://maps.google.com/?q=48.3987,-122.5865" target="_blank" style="color:var(--info);">Google Maps 导航</a></li>
+        <li><a href="https://www.tidespro.com/us/washington/ala-spit-whidbey-island" target="_blank" style="color:var(--info);">Ala Spit 实时潮汐</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 总结 ==================== -->
+<div class="card">
+  <h2>🎯 总结</h2>
+
+  <div class="info-box success">
+    <p><strong>✅ 本周日 (5/31) 去 Ala Spit 挖蛤值得一去！</strong></p>
+    <ul>
+      <li>⚠️ <strong>最后一天！</strong> 5月31日是本季最后机会</li>
+      <li>🌊 极佳低潮 -1.77 ft → 滩涂全露，黄金窗口 10AM-2PM</li>
+      <li>🐚 Butter Clam + Cockle 双料丰富，全 WA 少有的 Cockle 高产地</li>
+      <li>🟢 去 Spit 尖端找砾石混合区，不要去内侧泥滩</li>
+      <li>🚗 Bellevue 出发 2 小时，当天往返完全可行</li>
+      <li>📏 记得 Cockle 新规最小 2.5"！带尺子！</li>
+      <li>🔬 出发前打 1-800-562-5632 确认 DOH 状态</li>
+    </ul>
+    <p style="margin-top:10px; font-size:14px; color:#666;">祝收获满满，满载而归！🐚🪣✨</p>
+  </div>
+</div>
+
+<div class="footer">
+  本攻略由 Hermes Agent 生成 · 数据来源：WDFW, WA DOH Biotoxin Bulletin (2026-05-29), NOAA Tides, ESRI World Imagery<br>
+  出发前务必核实 DOH 生物毒素状态和 WDFW 最新法规
+</div>
+
+</div>
+</body>
+</html>
