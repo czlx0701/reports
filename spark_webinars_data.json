@@ -38,7 +38,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "Rebecca Schaefer博士（辛辛那提儿童医院心理医生，Regulating Together项目创始人）",
       "s": "本讲座由Rebecca Schaefer博士主讲，聚焦于照护者如何帮助自闭症儿童建立情绪调节能力。Schaefer博士首先定义了情绪调节——即控制、管理和调整情绪体验、表达和强度的过程，并区分了情绪失调的表现（从0到100的极端反应、崩溃、攻击行为等）。研究表明自闭症儿童出现情绪失调的可能性是普通儿童的四倍，原因包括对情绪理解困难、执行功能挑战、感官敏感、僵化思维等。讲座重点介绍了照护者在情绪调节中的三重角色：(1)自身情绪调节——照护者需要先管理好自己的情绪，使用深呼吸、放松技巧、正念应用等工具；(2)创造支持性环境——让情绪表达在家庭中被接纳；(3)教授和强化情绪调节技能——通过共同调节的方式，照护者自身冷静的生理反应会自然地帮助孩子平静下来。Schaefer博士还强调了发展阶段的差异：幼儿期需要大量共同调节，青春期情绪失调可能加剧，需要更多而非更少的支持。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0004_Strategies_for_Caregivers_Emotion_Regulation.md"
     },
     {
       "i": 5,
@@ -168,7 +169,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "Dr. Stephen Shore — Adelphi University",
       "s": "自闭症自我倡导者Stephen Shore博士提出自闭症'四个A'框架：认知、接纳、欣赏与行动，强调从缺陷模式转向基于优势的方法，实现充实而有意义的人生。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0017_Autism_Acceptance_Appreciation_Action.md"
     },
     {
       "i": 18,
@@ -238,7 +240,8 @@
       "g": "饮食营养 (Diet & Nutrition)",
       "p": "SPARK特邀讲者",
       "s": "本讲座探讨自闭症儿童的喂养困难，区分普通挑食与需要专业干预的喂养障碍。涵盖感官敏感对进食的影响、食物刻板、口腔运动技能延迟等问题，以及自闭症相关的限制性进食障碍诊断标准。提供家庭环境中改善进食体验的实用策略和何时寻求专业帮助的指导。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0024_Feeding_Difficulties.md"
     },
     {
       "i": 25,
@@ -288,7 +291,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨自闭症学生在学校至监狱管道中的高风险，分析行为误解、缺乏支持服务及系统性偏见如何导致自闭症个体被过度惩戒和司法化。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0029_Autism_School_to_Prison_Pipeline.md"
     },
     {
       "i": 30,
@@ -338,7 +342,8 @@
       "g": "女性自闭症 (Autism in Women)",
       "p": "SPARK特邀专家 (SPARK Invited Specialist)",
       "s": "本讲座探讨了女性自闭症的独特表现和挑战。与男性相比，女性自闭症患者可能表现出不同的症状模式，如更好的社交模仿能力、更隐蔽的重复行为，以及更高的掩蔽（masking）倾向，导致诊断延迟或被遗漏。讲座讨论了性别差异对诊断、干预和支持的影响，以及如何为女性自闭症患者提供更具针对性的服务。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0034_Girls_and_Autism.md"
     },
     {
       "i": 35,
@@ -508,7 +513,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "未注明（SPARK系列讲座）",
       "s": "本SPARK讲座聚焦于⾮洲裔⿊⼈社区中信仰、残疾、⼼理健康与研究的交叉议题。讲座探讨了信仰社区在⽀持残疾⼈⼠及其家庭中的⻆⾊，以及如何通过⽂化敏感的⽅式与⾮洲裔⿊⼈社区展开对话，推动其参与⾃闭症研究，同时尊重其信仰传统和⽂化价值观。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0051_Faith_Disability_Mental_Health_Black_Community.md"
     },
     {
       "i": 52,
@@ -538,7 +544,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK特邀专家 (SPARK Invited Specialist)",
       "s": "本讲座探讨了自闭症与抑郁症共病的现象、管理策略和关键资源。内容涵盖自闭症患者抑郁症的独特表现、诊断挑战、有效治疗方法和药物选择，以及家庭如何识别抑郁症的早期症状并提供支持。讲座还介绍了针对自闭症群体的心理健康资源和转介途径，强调了整合性护理的重要性。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0054_Autism_and_Depression.md"
     },
     {
       "i": 55,
@@ -568,7 +575,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨隐性种族偏见在自闭症诊断、治疗和服务获取中的影响，分析种族差异如何导致诊断延迟、服务不平等和自闭症儿童的不同结果。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0057_Implicit_Racial_Biases_Autism.md"
     },
     {
       "i": 58,
@@ -588,7 +596,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "未注明（SPARK系列讲座）",
       "s": "本SPARK讲座探讨了⾃闭症⼈⼠在整个⽣命周期中常见的共病⼼理健康问题。讲座涵盖了⾃闭症与焦虑症、抑郁症、ADHD、强迫症等⼼理健康状况的⾼共病率，以及这些共病条件在不同年龄段（⼉童、⻘少年、成⼈、⽼年⼈）的不同表现形式、识别⽅法和循证治疗策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0059_Autism_Mental_Health_Co_morbid.md"
     },
     {
       "i": 60,
@@ -608,7 +617,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "Dr. Vanessa Bal — 学术研究员",
       "s": "Vanessa Bal博士问答环节，讨论COVID-19疫情对自闭症成人的影响，包括社交隔离、服务中断、心理健康挑战及应对策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0061_Autistic_Adults_COVID19.md"
     },
     {
       "i": 62,
@@ -648,7 +658,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "深入探讨自闭症中攻击行为的成因与机制，分析感官超载、沟通障碍和情绪失调等触发因素，介绍基于证据的行为干预和支持策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0065_Understanding_Aggression_Autism.md"
     },
     {
       "i": 66,
@@ -688,7 +699,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨自闭症谱系与性取向、性别认同的交叉关系，分析自闭症群体中多元性别的更高比例，以及支持LGBTQ+自闭症个体的最佳实践。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0069_Sexual_Orientation_Gender_Identity_Autism.md"
     },
     {
       "i": 70,
@@ -708,7 +720,8 @@
       "g": "运动与身体活动 (Motor & Physical Activity)",
       "p": "未注明（SPARK系列讲座）",
       "s": "本SPARK讲座介绍了针对⾃闭症⼉童的体育活动和创造性运动⼲预⽅法。讲座探讨了结构化体育活动和创造性运动如何改善⾃闭症⼉童的运动技能、社交互动、情绪调节和整体健康状况，包括具体的⼲预⽅案设计、实施指南以及家长和教育⼯作者可以采⽤的实⽤策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0071_Physical_Activity_Creative_Movement.md"
     },
     {
       "i": 72,
@@ -748,7 +761,8 @@
       "g": "饮食营养 (Diet & Nutrition)",
       "p": "未注明（SPARK系列讲座）",
       "s": "本SPARK讲座探讨了⾃闭症谱系障碍中常⻅的饮⻝问题和⻝物选择性。讲座分析了⾃闭症⼉童挑⻝、拒绝某些⻝物质地和颜⾊、有限的⻝物种类偏好等问题的可能原因（包括感官敏感性、⾏为固着、胃肠不适等），并提供了基于⾏为⼲预、感觉整合和营养补充的综合性管理策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0075_Eating_Issues_Food_Selectivity.md"
     },
     {
       "i": 76,
@@ -768,7 +782,8 @@
       "g": "诊断与评估 (Diagnosis & Assessment)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "解析自闭症、多动症和执行功能缺陷之间的重叠与共病关系，介绍执行功能训练策略及其对自闭症和多动症个体的日常功能改善作用。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0077_Executive_Functioning_Autism_ADHD.md"
     },
     {
       "i": 78,
@@ -788,7 +803,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "未注明（SPARK系列讲座）",
       "s": "本SPARK讲座探讨了在⾃闭症⼈⼠整个⽣命周期中治疗焦虑和抑郁的⽅法。讲座介绍了适⽤于⾃闭症个体的认知⾏为疗法（CBT）调整版本、药物⼲预策略（包括SSRI类药物的使⽤注意事项），以及正念、社交技能训练和⼈际关系⼲预等辅助⽅法，强调了识别和区别对待⾃闭症相关症状与共病⼼理健康问题的重要性。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0079_Treating_Anxiety_Depression_Lifespan.md"
     },
     {
       "i": 80,
@@ -798,7 +814,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK特邀讲者",
       "s": "本讲座提供帮助自闭症家庭改善睡眠的实用指南。自闭症儿童睡眠问题的发生率高达百分之50到80。讲座分析睡眠问题的常见原因（感官敏感、褪黑素分泌异常、焦虑、不良睡眠习惯），并提供行为干预策略和医学干预选项，帮助家庭获得所需的休息。",
-      "h": false
+      "h": false,
+      "m": "summary/spark/0080_Sleep_and_Autism.md"
     },
     {
       "i": 81,
@@ -888,7 +905,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨自闭症接纳运动的核心理念，从自闭症认知到真正接纳的转变，强调神经多样性视角和社会包容性对自闭症群体福祉的重要性。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0089_Autism_Acceptance.md"
     },
     {
       "i": 90,
@@ -898,7 +916,8 @@
       "g": "运动与身体活动 (Motor & Physical Activity)",
       "p": "SPARK特邀专家 (SPARK Invited Specialist)",
       "s": "本讲座探讨了运动功能和身体活动在自闭症谱系障碍中的重要性。研究表明运动困难是自闭症的常见特征，影响精细运动、粗大运动和协调能力。讲座讨论了运动困难与社交沟通和日常生活技能的关系，以及身体活动如何促进整体健康和福祉，并介绍了促进运动发展和身体活动的干预策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0090_Motor_Function_Physical_Activity.md"
     },
     {
       "i": 91,
@@ -918,7 +937,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK特邀讲者",
       "s": "本讲座深入探讨自闭症谱系障碍中的睡眠问题。聚焦睡眠障碍的病理生理机制——褪黑素合成途径异常、昼夜节律基因变异、过度觉醒状态等。讲座介绍客观睡眠评估方法和循证干预，包括药物和非药物治疗策略。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0092_Sleep_in_ASD.md"
     },
     {
       "i": 93,
@@ -968,7 +988,8 @@
       "g": "心理健康 (Mental Health)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨自闭症与焦虑症的共病关系、焦虑在自闭症人群中的独特表现，以及针对自闭症个体的认知行为疗法等循证干预方法。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0097_Anxiety_and_Autism.md"
     },
     {
       "i": 98,
@@ -1048,7 +1069,8 @@
       "g": "诊断与评估 (Diagnosis & Assessment)",
       "p": "SPARK Webinar 演讲嘉宾",
       "s": "探讨女性自闭症的独特表现与诊断挑战，分析女性自闭症个体在诊断延迟、社交掩饰、干预需求及身份认同方面的特殊经历。",
-      "h": true
+      "h": true,
+      "m": "summary/spark/0105_Girls_and_Women_on_the_Spectrum.md"
     },
     {
       "i": 106,
