@@ -200,7 +200,8 @@
       "g": "行为干预 (Behavioral Support)",
       "p": "SPARK特邀讲者",
       "s": "本西班牙语讲座探讨应对自闭症儿童困难行为的管理策略。涵盖功能性行为评估、正向行为支持、ABC行为分析模型等方法，帮助照护者理解行为背后的沟通意图，并提供减少挑战性行为、增加适应性技能的实用技巧，特别面向西班牙语裔家庭提供文化适配的支持策略。",
-      "h": false
+      "h": false,
+      "m": "summary/spark/Estrategias_Manejo_Comportamientos_Dificiles.md"
     },
     {
       "i": 21,
@@ -815,7 +816,7 @@
       "p": "SPARK特邀讲者",
       "s": "本讲座提供帮助自闭症家庭改善睡眠的实用指南。自闭症儿童睡眠问题的发生率高达百分之50到80。讲座分析睡眠问题的常见原因（感官敏感、褪黑素分泌异常、焦虑、不良睡眠习惯），并提供行为干预策略和医学干预选项，帮助家庭获得所需的休息。",
       "h": false,
-      "m": "summary/spark/0080_Sleep_and_Autism.md"
+      "m": "summary/spark/Sleep_and_Autism.md"
     },
     {
       "i": 81,
