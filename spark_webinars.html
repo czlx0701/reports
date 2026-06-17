@@ -32,7 +32,6 @@ h1{font-size:22px;margin-bottom:4px;color:#f0f6fc}
 .video-row .idx{color:#8b949e;font-size:12px;padding-top:3px}
 .video-row .title{color:#e1e4e8;font-size:13px}
 .video-row .title .has-ts{display:inline-block;width:6px;height:6px;border-radius:50%;background:#3fb950;margin-right:8px;vertical-align:middle}
-.video-row .title .has-md{font-size:11px;margin-left:3px;vertical-align:middle;cursor:help;opacity:0.8}
 .video-row .title .no-ts{display:inline-block;width:6px;height:6px;border-radius:50%;background:#30363d;margin-right:8px;vertical-align:middle}
 .video-row .dur{color:#8b949e;font-size:12px;text-align:right;padding-top:3px}
 .detail-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:#0f1117;z-index:100;overflow-y:auto}
@@ -67,26 +66,7 @@ h1{font-size:22px;margin-bottom:4px;color:#f0f6fc}
 .video-row{grid-template-columns:28px 1fr 60px;padding:8px 12px 8px 38px}
 .detail-body{padding:16px 12px 40px}
 }
-/* Markdown summary section */
-.detail-md-section{margin-top:8px}
-.markdown-body{padding:12px 16px;background:#161b22;border:1px solid #30363d;border-radius:8px;font-size:14px;line-height:1.7;overflow-x:auto}
-.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4{margin:16px 0 8px;border-bottom:none}
-.markdown-body h1{font-size:20px}
-.markdown-body h2{font-size:17px}
-.markdown-body h3{font-size:15px}
-.markdown-body p{margin:6px 0}
-.markdown-body ul,.markdown-body ol{padding-left:20px}
-.markdown-body li{margin:3px 0}
-.markdown-body code{background:#21262d;padding:2px 6px;border-radius:4px;font-size:13px}
-.markdown-body pre{background:#0d1117;padding:12px;border-radius:6px;overflow-x:auto;border:1px solid #30363d}
-.markdown-body pre code{background:none;padding:0}
-.markdown-body strong{color:#f0f6fc}
-.markdown-body a{color:#58a6ff}
-.markdown-body hr{margin:16px 0;border-color:#30363d}
-.markdown-body blockquote{border-left:3px solid #30363d;padding-left:12px;color:#8b949e;margin:8px 0}
 </style>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css">
 </head>
 <body>
 
@@ -141,7 +121,6 @@ function render(){
         '<span class="title">'+
           (v.h ? '<span class="has-ts"></span>' : '<span class="no-ts"></span>')+
           v.t+
-          (v.m ? '<span class="has-md">📝</span>' : '')+
         '</span>'+
         '<span class="dur">'+v.d+'</span>'+
       '</div>';
@@ -161,17 +140,6 @@ function closeDetail(){
   document.body.style.overflow = '';
   history.replaceState(null, '', location.pathname);
 }
-
-// Browser back/forward button support
-window.addEventListener('hashchange', function(){
-  var hash = location.hash;
-  if(hash && hash.indexOf('#video-') === 0){
-    var idx = parseInt(hash.replace('#video-', ''), 10);
-    if(!isNaN(idx)) openDetail(idx);
-  } else {
-    closeDetail();
-  }
-});
 
 function copyLink(){
   var url = location.href.split('#')[0] + location.hash;
@@ -226,31 +194,6 @@ function openDetail(idx){
     html += '<div class="no-ts-msg">字幕已获取，但未能分段（内容可能较短）</div>';
   } else {
     html += '<div class="no-ts-msg">⚠ 此视频暂无可用字幕，摘要是根据标题和项目背景生成</div>';
-  }
-
-  // Render associated markdown summary if available
-  if(v.m){
-    html += '<div class="detail-md-section">' +
-      '<div class="detail-meta" style="margin-top:20px;font-weight:600;color:#f0f6fc">📄 中文解读</div>' +
-      '<div class="markdown-body" id="md-content-'+v.i+'"><em>加载中...</em></div></div>';
-
-    // Fetch and render via fetch in a separate pass
-    setTimeout(function(id, url){
-      fetch(url).then(function(r){
-        if(!r.ok) throw new Error('Not found');
-        return r.text();
-      }).then(function(md){
-        var el = document.getElementById('md-content-'+id);
-        if(el && typeof marked !== 'undefined'){
-          el.innerHTML = marked.parse(md);
-        } else if(el) {
-          el.innerHTML = '<pre style="background:#0d1117;padding:12px;border-radius:6px">'+esc(md)+'</pre>';
-        }
-      }).catch(function(e){
-        var el = document.getElementById('md-content-'+id);
-        if(el) el.innerHTML = '<span style="color:#f85149">⚠ 解读文件暂不可用</span>';
-      });
-    }, 100, v.i, v.m);
   }
 
   document.getElementById('detail-body').innerHTML = html;
