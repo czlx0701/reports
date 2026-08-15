@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f1117">
+<title>⛺ Oceana 露营 8/15–16</title>
+<style>
+:root{
+  --bg:#0f1117; --card:#1a1d27; --card2:#222639; --border:#2d3248;
+  --text:#e1e4ed; --text2:#9498b0; --accent:#6c8cff; --accent2:#4cc9a0;
+  --warn:#f59e0b; --danger:#ff6b6b; --radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.55;padding:14px 14px 90px;font-size:15px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:20px;margin-bottom:4px}
+.sub{color:var(--text2);font-size:13px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px}
+.card h2{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.card h3{font-size:14px;margin:10px 0 4px;color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+th,td{padding:5px 8px;border:1px solid var(--border);text-align:left}
+th{background:var(--card2);font-weight:600;white-space:nowrap}
+td.n{white-space:nowrap}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;margin-left:6px;vertical-align:middle}
+.tag-ok{background:rgba(76,201,160,.15);color:var(--accent2)}
+.tag-warn{background:rgba(245,158,11,.15);color:var(--warn)}
+.tag-no{background:rgba(255,107,107,.15);color:var(--danger)}
+.tag-have{background:rgba(108,140,255,.15);color:var(--accent)}
+a{color:var(--accent);text-decoration:none}
+ul{padding-left:18px;font-size:14px}
+li{margin:3px 0}
+.note{background:rgba(245,158,11,.08);border-left:3px solid var(--warn);padding:8px 12px;border-radius:4px;font-size:13px;margin-top:8px}
+.warnbox{background:rgba(255,107,107,.08);border-left:3px solid var(--danger);padding:8px 12px;border-radius:4px;font-size:13px;margin-top:8px}
+.tide{display:flex;justify-content:space-between;align-items:center;background:var(--card2);border-radius:8px;padding:8px 12px;margin:6px 0;font-size:13.5px}
+.tide .t{font-weight:700}
+.tide .h{color:var(--accent)}
+.tide .l{color:var(--accent2)}
+.tide .big{color:var(--warn);font-weight:700}
+/* checklist */
+.progress{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bar-track{flex:1;height:16px;background:var(--card2);border-radius:8px;overflow:hidden}
+.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s;border-radius:8px}
+.pct{font-size:13px;color:var(--text2);min-width:44px;text-align:right}
+.grptitle{font-size:14px;font-weight:700;margin:14px 0 6px;color:var(--text)}
+.item{display:flex;align-items:flex-start;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:9px 12px;margin-bottom:6px;cursor:pointer;user-select:none}
+.item input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent2);flex-shrink:0}
+.item .txt{flex:1;font-size:14px}
+.item .tip{color:var(--text2);font-size:12px}
+.item.done{opacity:.55}
+.item.done .txt{text-decoration:line-through}
+.btn{display:inline-block;background:transparent;border:1px solid var(--warn);color:var(--warn);font-size:13px;padding:6px 14px;border-radius:18px;cursor:pointer;margin-top:10px}
+.phone{display:inline-flex;align-items:center;gap:4px;background:rgba(108,140,255,.12);padding:2px 10px;border-radius:14px;font-size:13px;white-space:nowrap}
+.sec-divider{border-top:1px solid var(--border);margin:16px 0}
+.footer{color:var(--text2);font-size:11.5px;text-align:center;margin-top:20px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>⛺ Thousand Trails Oceana 露营</h1>
+<div class="sub">8/15 (周六) – 8/16 (周日) · Ocean City, WA · 位号 6/7/8（前区）· 数据核验于 8/15 凌晨</div>
+
+<!-- 关键信息 -->
+<div class="card">
+  <h2>📞 关键信息</h2>
+  <table>
+    <tr><th>Check-in</th><td class="n">12:00 中午</td><th>Check-out</th><td class="n">11:00</td></tr>
+    <tr><th>前台</th><td><a class="phone" href="tel:3602893504">📞 360-289-3504</a></td><th>晚到</th><td><a class="phone" href="tel:8778642728">877-864-2728</a></td></tr>
+    <tr><th>车程</th><td>2.5–3 小时</td><th>路线</th><td>I-5 → US-101 → SR-109</td></tr>
+  </table>
+  <div class="note">🏪 <b>最后一站补给：Hoquiam / Aberdeen 的 Walmart 或 Safeway</b>（过桥前买齐吃的、水、木柴）。SR-109 上信号弱、营地 wifi 慢 — 提前下载离线地图和娃的视频。</div>
+</div>
+
+<!-- 天气 -->
+<div class="card">
+  <h2>🌤️ 天气 <span class="tag tag-ok">NWS 实时</span></h2>
+  <table>
+    <tr><th></th><th>白天</th><th>夜间</th><th>情况</th></tr>
+    <tr><td><b>周六 8/15</b></td><td class="n">65°F / 18°C</td><td class="n">54°F / 12°C</td><td>早局部雾 → 多云，无雨，风小</td></tr>
+    <tr><td><b>周日 8/16</b></td><td class="n">66°F / 19°C</td><td class="n">55°F / 13°C</td><td>多云，无雨，西北风 2–10</td></tr>
+  </table>
+  <div class="note">海边体感偏凉、湿度大：<b>防风外套 + 帽子必带</b>，备雨衣（雾滴）。日落约 8:20pm — 这家卖点就是日落。</div>
+</div>
+
+<!-- 潮汐 -->
+<div class="card">
+  <h2>🌊 潮汐 <span class="tag tag-ok">NOAA 实时</span></h2>
+  <div class="tide"><div><span class="t">周六</span> 低潮 <span class="l">09:03</span></div><div class="l big">-0.8ft 大负潮</div></div>
+  <div class="tide"><div><span class="t">周六</span> 高潮 15:39 · 低潮 <span class="l">21:30</span></div></div>
+  <div class="tide"><div><span class="t">周日</span> 低潮 <span class="l">09:40</span> (0.1ft)</div><div class="h">高潮 16:14</div></div>
+  <div class="note">🕗 <b>玩沙窗口：周六 8:30–10:00 &amp; 20:30–21:30；周日 9:00–10:30。</b>高潮 9ft 时沙滩几乎全没。潮差 9ft 涨得快（每小时 ~1.5ft）— 别背对海，留好回程路。</div>
+</div>
+
+<!-- 用火 -->
+<div class="card">
+  <h2>🔥 用火规则 <span class="tag tag-ok">已验证</span></h2>
+  <ul>
+    <li>✅ 州长令（至 9/30）：<b>火圈内营火 + 燃气炉/烤炉</b> 都允许</li>
+    <li>✅ 你有 卡式炉 + Cuisinart 桌上烤炉 + 丙烷 — 全都没问题，<b>防风挡板海边必备</b></li>
+    <li>⚠️ 堆篝火/明火堆禁止；营火只进营地提供的火圈 — <b>到前台确认一下</b></li>
+    <li>⚠️ 1 磅丙烷罐大火约 1–1.5 小时 — 两天行程建议备一罐（卡式炉可兜底）</li>
+    <li>木柴在 Hoquiam/营地当地买，别带外地柴</li>
+  </ul>
+</div>
+
+<!-- 做饭方案 -->
+<div class="card">
+  <h2>🍳 做饭方案</h2>
+  <table>
+    <tr><th>设备</th><th>用途</th><th>备注</th></tr>
+    <tr><td>卡式炉 + 防风挡板</td><td>煮水/咖啡/热汤/炒菜</td><td class="n"><span class="tag tag-have">已有</span></td></tr>
+    <tr><td>Cuisinart 桌上烤炉</td><td>烤肉/烤蔬菜/烤棉花糖</td><td class="n"><span class="tag tag-have">已有</span> 1磅罐</td></tr>
+  </table>
+  <div class="note">确认卡式炉<b>气罐</b>和丙烷罐都带齐；炉子都在车里备好，烧饭不用篝火，安全又省事。</div>
+</div>
+
+<!-- 营地 -->
+<div class="card">
+  <h2>🏕️ 营地情况</h2>
+  <ul>
+    <li>88 位小营地，全年开放。设施：<b>playground、排球、马蹄铁、淋浴/卫生间、洗衣房</b>、wifi（慢）</li>
+    <li>❌ 无泳池、无组织 kids 活动 — 但<b>人少安静，对娃反而是优点</b></li>
+    <li>📍 <b>6/7/8 号位在前区</b>（办公室/出入口一侧、靠路）— 可能有车流声，RV 位 30A 电+水</li>
+    <li>💡 娃对噪音敏感的话：<b>入住时问前台能否换靠内侧/海滩侧的位</b></li>
+    <li>🌅 主菜是海滩：放风筝（风大超合适）、沙滩骑行、冲浪钓鱼（16+ 需盐钓证）、日落 8:20pm</li>
+  </ul>
+</div>
+
+<!-- 周边 -->
+<div class="card">
+  <h2>🗺️ 周边可玩</h2>
+  <table>
+    <tr><th>地点</th><th>车程</th><th>看点</th></tr>
+    <tr><td><b>Griffiths-Priday 州立公园</b></td><td class="n">5 分钟</td><td>沙丘+河口步道 3.2mi，秃鹰/水鸟，人极少</td></tr>
+    <tr><td><b>Ocean Shores</b></td><td class="n">15 分钟</td><td>迷你高尔夫/保龄球/街机/冰淇淋（雨天备选）</td></tr>
+    <tr><td><b>Seabrook 小镇</b></td><td class="n">25 分钟</td><td>安静海边小镇，游乐场/泳池/咖啡</td></tr>
+  </table>
+  <div class="warnbox">⚠️ Damon Point（Ocean Shores）<b>关闭中</b>（2026-03 起），别白跑。</div>
+</div>
+
+<!-- Westport 蟹 -->
+<div class="card">
+  <h2>🎣 周日 Westport 放蟹笼 <span class="tag tag-no">纯玩 / 放生</span></h2>
+  <ul>
+    <li>✅ 季内：MA 2-2 (Grays Harbor) <b>每天开放</b>，蟹笼季至 9/15</li>
+    <li>🪪 15 岁以上需 <b>shellfish 钓鱼证</b>；不需要 Puget Sound 附加证</li>
+    <li>🪤 <b>每人最多 2 笼</b>；笼须有 rot cord + 2 个 4¼" 逃生环；浮标写姓名地址</li>
+    <li>🌅 所有渔具 <b>日落 1 小时内收</b>（周日日落 ~8:20pm → 最晚 ~9:20pm）</li>
+    <li>📍 <b>Westport Marina 码头</b>放笼最省事（水面平静）；饵料用鸡腿/鱿鱼</li>
+    <li>🌊 高潮 16:14 → <b>13:00–17:00 下笼最佳</b>；车程 ~40 分钟（SR-109 → US-101 → SR-105）</li>
+    <li>🐚 不吃就全放生：<b>母蟹、软壳蟹、不够 6"（Dungeness）都必放</b>，岸边保留背壳备查</li>
+  </ul>
+</div>
+
+<!-- 娃 -->
+<div class="card">
+  <h2>👧 娃的注意点</h2>
+  <ul>
+    <li><b>噪音</b>：周末人多+发电机 → 降噪耳机、熟悉的安抚物/睡前白噪音</li>
+    <li><b>冷+湿</b>：65°F 阴天体感凉 → 长袖+防风外套+雨衣；沙滩带垫子/椅子</li>
+    <li><b>夜 54°F</b>：睡袋（舒适温标 ≤50°F）+ 毛毯，防潮垫加 R 值，穿袜睡</li>
+    <li><b>海边安全</b>：浪大、离岸流、无救生员、水温 ~56°F 不能下水 → 娃不离手</li>
+    <li>低潮时给娃划<b>视觉边界</b>（旗子/潮线以上玩），防止往水里跑</li>
+  </ul>
+</div>
+
+<!-- 打包清单 -->
+<div class="card" style="border-color:var(--accent)">
+  <h2>📦 打包清单 <span class="tag tag-have">勾选自动保存</span></h2>
+  <div class="progress">
+    <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+    <div class="pct" id="pct">0%</div>
+  </div>
+  <div id="checklist"></div>
+  <button class="btn" onclick="resetAll()">↺ 重置全部</button>
+</div>
+
+<div class="footer">
+  数据来源：NWS / NOAA / WDFW / DOH / 官方营地页（8/15 凌晨核验）<br>
+  出发前 3 件事：① 电话确认位号+篝火政策 ② 下载离线地图+娃的视频 ③ 截屏潮汐表<br>
+  前台 360-289-3504 · 晚到 (877) 864-2728
+</div>
+
+</div>
+
+<script>
+const LS_KEY = 'oceana_trip_v1';
+const GROUPS = [
+  {g:'证件 / 预订', items:[
+    {t:'预订确认号 / 邮件', tip:'前台 check-in 用'},
+    {t:'身份证件', tip:'check-in 要 ID'},
+    {t:'钓鱼证（Westport 用）', tip:'15+ 需 shellfish 证，娃免费'},
+    {t:'现金', tip:'营地小店可能只收卡，备点现金'},
+  ]},
+  {g:'衣物（海边冷+湿）', items:[
+    {t:'防风外套 ×3', tip:'全家每人一件'},
+    {t:'雨衣', tip:'雾滴/毛毛雨'},
+    {t:'长袖+长裤', tip:'65°F 体感凉'},
+    {t:'帽子', tip:'防风保暖'},
+    {t:'娃备用衣物 ×3', tip:'玩沙必湿'},
+    {t:'睡袜 / 保暖袜'},
+  ]},
+  {g:'睡眠（夜 54°F）', items:[
+    {t:'帐篷 + 地钉 + 风绳', tip:'海边风大，务必打满地钉'},
+    {t:'睡袋（舒适 ≤50°F）'},
+    {t:'毛毯', tip:'给娃加层'},
+    {t:'防潮垫 / 充气垫', tip:'加 R 值，隔冷'},
+    {t:'枕头 / 安抚物'},
+  ]},
+  {g:'做饭（已备：烤炉+丙烷+卡式炉+防风板）', items:[
+    {t:'卡式炉 + 气罐', have:true},
+    {t:'防风挡板', have:true, tip:'海边风大，必须'},
+    {t:'Cuisinart 烤炉 + 1磅丙烷', have:true, tip:'大火约1-1.5h，建议备罐'},
+    {t:'备用丙烷罐', tip:'两天行程保险'},
+    {t:'锅 / 水壶 / 餐具'},
+    {t:'食材 + 饮用水', tip:'Hoquiam Walmart 最后采购'},
+    {t:'咖啡 / 娃的零食'},
+    {t:'木柴（当地买）', tip:'营地/Hoquiam 买'},
+  ]},
+  {g:'海滩玩', items:[
+    {t:'风筝', tip:'风大，主菜'},
+    {t:'沙玩具 / 桶铲'},
+    {t:'飞盘 / 沙滩球'},
+    {t:'露营椅', tip:'沙滩坐着看日落'},
+    {t:'自行车（可选）', tip:'沙滩骑行到 Ocean Shores 实测可行'},
+    {t:'防晒霜 / 墨镜'},
+  ]},
+  {g:'娃专用', items:[
+    {t:'降噪耳机', tip:'发电机/码头船声'},
+    {t:'睡前白噪音 / 熟悉音频', tip:'提前下载好'},
+    {t:'安抚物 / 熟悉枕头'},
+    {t:'湿巾 / 垃圾袋', tip:'玩沙擦手'},
+    {t:'常备药 / 应急用品'},
+  ]},
+  {g:'Westport 蟹（纯玩）', items:[
+    {t:'蟹笼 ×2/人'},
+    {t:'浮标 + 记号笔', tip:'写姓名地址'},
+    {t:'蟹尺（6"）', tip:'Dungeness 不够 6" 必放'},
+    {t:'厚手套', tip:'防夹防绳'},
+    {t:'饵：鸡腿 / 鱿鱼'},
+  ]},
+  {g:'电子 / 杂项', items:[
+    {t:'充电宝 + 车充'},
+    {t:'手电 / 头灯'},
+    {t:'离线地图 + 娃视频下载', tip:'SR-109 信号弱'},
+    {t:'纸巾 / 厨用纸'},
+    {t:'垃圾袋 / 保鲜袋'},
+  ]},
+];
+
+let state = {};
+try { state = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch(e) { state = {}; }
+
+function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){} }
+
+function render(){
+  const el = document.getElementById('checklist');
+  let html = '';
+  GROUPS.forEach((grp, gi) => {
+    html += '<div class="grptitle">' + grp.g + '</div>';
+    grp.items.forEach((it, ii) => {
+      const key = gi + '-' + ii;
+      const done = !!state[key];
+      const have = it.have ? ' <span class="tag tag-have">已有</span>' : '';
+      const tip = it.tip ? '<div class="tip">' + it.tip + '</div>' : '';
+      html += '<label class="item' + (done?' done':'') + '">' +
+        '<input type="checkbox" data-key="' + key + '"' + (done?' checked':'') + '>' +
+        '<div class="txt">' + it.t + have + tip + '</div></label>';
+    });
+  });
+  el.innerHTML = html;
+  el.querySelectorAll('input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      state[cb.dataset.key] = cb.checked;
+      save(); render();
+    });
+  });
+  let done = 0, total = 0;
+  GROUPS.forEach((grp, gi) => grp.items.forEach((it, ii) => { total++; if(state[gi+'-'+ii]) done++; }));
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('barFill').style.width = pct + '%';
+  document.getElementById('pct').textContent = pct + '%';
+}
+
+function resetAll(){
+  if(!confirm('重置全部勾选？')) return;
+  state = {}; save(); render();
+}
+
+render();
+</script>
+</body>
+</html>
