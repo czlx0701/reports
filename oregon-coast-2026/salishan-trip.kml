@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+  <name>Salishan 躺平之旅 9/4-9/7 · 全部点位</name>
+  <description><![CDATA[Salishan 躺平之旅 9/4-9/7 — 所有游玩点+餐厅+观鲸 backup，含备注与 Google Maps 链接。导入 Google My Maps 后可逐点打开。]]></description>
+  <Placemark>
+    <name>Bellevue 出发</name>
+    <description><![CDATA[出发起点 Bellevue,WA。内陆线 I-5→Salem→OR-18→Salishan，约287mi/4.5-5h（含停靠）。Model Y 建议中点 Keizer 补电。
+🗺 https://www.google.com/maps/place/Bellevue,+WA/@47.5978965,-122.1510501,12z/data=!3m1!4b1!4m6!3m5!1s0x54906bcfa3a66041:0xbacf5482ead00765!8m2!3d47.6101497!4d-122.2015159!16zL20vMDEwcjZm?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-122.1510501,47.5978965,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Keizer Station 充电+午餐（中点）</name>
+    <description><![CDATA[中途充电+午餐点：I-5 exit 260 Keizer Station。16桩 Tesla V4(325kW) 补电20-25min到75-80%；Red Robin 儿童菜单。补满后 OR-18 到 Salishan 约85mi，到店55-60%。
+🗺 https://www.google.com/maps/place/Keizer+Station/@45.0097464,-122.9983945,17z/data=!3m1!4b1!4m6!3m5!1s0x5495575621d16799:0xa297f3d7e9c78b1c!8m2!3d45.0097464!4d-122.9983945!16s%2Fg%2F11fll5ns2_?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-122.9983945,45.0097464,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Salishan Coastal Lodge 抵达+泡泳池</name>
+    <description><![CDATA[基地 Salishan Coastal Lodge(Gleneden Beach,SCP)。室内泳池24/7、热水缸7-10pm、Aerial Park(8岁+60磅)。门口8桩Tesla目的地L2过夜满电。晚餐：The Attic(4-9pm)或房内送餐。
+🗺 https://www.google.com/maps/place/Salishan+Coastal+Lodge+by+SCP+Hotels/@44.8884692,-124.0229703,17z/data=!3m1!4b1!4m9!3m8!1s0x54c1dcb2c9a76aad:0xcce73cf2a5abd62c!5m2!4m1!1i2!8m2!3d44.8884692!4d-124.0229703!16s%2Fm%2F04yk65p?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0229703,44.8884692,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Cascade Head 生物圈导览</name>
+    <description><![CDATA[Cascade Head 生物圈导览(Knight Park,Otis)。免费90min自然科普；需防水鞋、无狗、湿滑段。娃没兴致可skip。
+🗺 https://www.google.com/maps/place/Knight+Park/@45.0408702,-123.9911607,17z/data=!3m1!4b1!4m6!3m5!1s0x54eaecef9b1c2521:0x31348ce8d4173b9b!8m2!3d45.0408702!4d-123.9911607!16s%2Fg%2F1tdr30v2?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-123.9911607,45.0408702,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Lincoln City · 玻璃浮标寻宝</name>
+    <description><![CDATA[Lincoln City 玻璃浮标寻宝(D River)。全年藏3000+颗免费，找到归你。白天投放、高潮线上方；1户/年限1颗。结构化寻宝对敏感娃友好。
+🗺 https://www.google.com/maps/place/D+River+State+Recreation+Site/@44.9674498,-124.0176911,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8d73a103a223:0x1c5d15cda852ae0d!8m2!3d44.9674498!4d-124.0176911!16s%2Fm%2F04q7gld?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0176911,44.9674498,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Roads End 沙滩</name>
+    <description><![CDATA[Roads End 沙滩(Lincoln City北端)。平坦开阔、礁石峡谷+海石柱，傍晚人少适合娃玩沙追浪。带小桶铲子+防晒。
+🗺 https://www.google.com/maps/place/Roads+End+State+Recreation+Site/@45.0082978,-124.0091672,17z/data=!3m1!4b1!4m6!3m5!1s0x54eaed4babb6c747:0x710ec9aabf6d7202!8m2!3d45.0082978!4d-124.0091672!16s%2Fm%2F04q0shs?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0091672,45.0082978,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Boiler Bay 观景台</name>
+    <description><![CDATA[Boiler Bay 观景台(免费)。玄武岩礁崖+浪，全俄州最佳灰鲸观景点(9月旺季每天5-15头)。停车即看无队无楼。⚠️观鲸中心8/1-10/31整修关闭。
+🗺 https://www.google.com/maps/place/Boiler+Bay+State+Scenic+Viewpoint/@44.8301548,-124.0655195,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea880e0967fe31:0xf8be0bb20e8f5284!8m2!3d44.8301548!4d-124.0655195!16s%2Fm%2F04qbmm2?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0655195,44.8301548,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Devils Punchbowl 大砂锅</name>
+    <description><![CDATA[Devils Punchbowl 天然礁石碗(免费)。护栏俯瞰巨浪漩涡，震撼。海浪声大，怕响的娃站远/戴耳罩。下午人多，上午去。
+🗺 https://www.google.com/maps/place/Devils+Punchbowl+State+Natural+Area/@44.7468595,-124.0635012,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea7c31f626a85f:0xb3a9abdcacb5fa14!8m2!3d44.7468595!4d-124.0635012!16s%2Fm%2F047c06l?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0635012,44.7468595,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Yaquina Head 灯塔+潮池</name>
+    <description><![CDATA[Yaquina Head 灯塔($7/车)。安静解说中心+平缓步道到灯塔+低潮潮池(海星/海胆/海葵)。塔内整修只开放一段。
+🗺 https://www.google.com/maps/place/Yaquina+Head+Outstanding+Natural+Area/@44.6762003,-124.0772211,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea78eecad2748d:0xeaed977c5971020c!8m2!3d44.6762003!4d-124.0772211!16s%2Fg%2F11b77hs3gm?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0772211,44.6762003,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Hatfield 海洋科学中心</name>
+    <description><![CDATA[Hatfield 海洋科学中心(OSU,全家≈$15)。室内潮池触摸缸+蓝鲸骨架+船模拟器，最低感官最平静，Seattle没有。⚠️章鱼喂食暂停。雨天备份。
+🗺 https://www.google.com/maps/place/Hatfield+Marine+Science+Center+Oregon+State+University/@44.6227578,-124.04525,17z/data=!4m10!1m2!2m1!1sHatfield+Marine+Science+Center+Newport+OR!3m6!1s0x54c1d7aecf50511b:0x4e2e1128b3075cf6!8m2!3d44.6226895!4d-124.0454078!15sCilIYXRmaWVsZCBNYXJpbmUgU2NpZW5jZSBDZW50ZXIgTmV3cG9ydCBPUlorIiloYXRmaWVsZCBtYXJpbmUgc2NpZW5jZSBjZW50ZXIgbmV3cG9ydCBvcpIBCmxhYm9yYXRvcnngAQA!16s%2Fm%2F043jtfx?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.04525,44.6227578,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Lincoln City Glass Center</name>
+    <description><![CDATA[Lincoln City Glass Center(免费看吹玻璃)。小而安静工作室，低噪可控；自己吹$75-225。周一开、回程顺路。
+🗺 https://www.google.com/maps/place/Lincoln+City+Glass+Center/@44.9289462,-124.0170966,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8c3202057517:0x7ee0b7e783250bc1!8m2!3d44.9289462!4d-124.0170966!16s%2Fg%2F1tlbj8yf?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0170966,44.9289462,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>返回 Bellevue</name>
+    <description><![CDATA[逛完玻璃中心，取道 US-101 北上 Lincoln City，转 HWY-18 东向内陆，接 I-5 北上，I-205 绕过波特兰中心回 Bellevue，傍晚到家。
+🗺 https://www.google.com/maps/place/Bellevue,+WA/@47.5978965,-122.1510501,12z/data=!3m1!4b1!4m6!3m5!1s0x54906bcfa3a66041:0xbacf5482ead00765!8m2!3d47.6101497!4d-122.2015159!16zL20vMDEwcjZm?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ff16a34a</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>stop</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-122.1510501,47.5978965,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Kyllo&#x27;s Seafood &amp; Grill</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Kyllo%E2%80%99s+Seafood+%26+Grill/@44.968125,-124.0167611,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8d739ce21037:0x8595002a8d041395!8m2!3d44.968125!4d-124.0167611!16s%2Fg%2F1tjcp565?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0167611,44.968125,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Side Door Cafe / Eden Hall</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Side+Door+Cafe+%26+Eden+Hall/@44.8784484,-124.0333708,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8925d2b874f5:0x92d8af3490b44151!8m2!3d44.8784484!4d-124.0333708!16s%2Fg%2F1td5q_kb?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0333708,44.8784484,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Yatai Sushi</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Yatai+Sushi/@44.9739471,-124.0135731,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8d6f8eb9b419:0xea4cdd286538d815!8m2!3d44.9739471!4d-124.0135731!16s%2Fg%2F11c2nn8c1b?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0135731,44.9739471,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>La Roca</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/La+Roca+%7C+Oaxaca+Mexican+Restaurant/@44.9427562,-124.0213529,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8db488a18d19:0x81f0fbb83f50e711!8m2!3d44.9427562!4d-124.0213529!16s%2Fg%2F11b7xt0v_2?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0213529,44.9427562,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Seoul K-Food (Depoe Bay)</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Seoul+K-Food/@44.8104668,-124.0615204,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea870020eacdbf:0x8494146b0edb6100!8m2!3d44.8104668!4d-124.0615204!16s%2Fg%2F11vy7p9fwp?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0615204,44.8104668,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Hearth &amp; Table</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Hearth+%26+Table/@44.9647663,-124.0174149,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8d0ab5bcb14f:0x1711d3c505145fb9!8m2!3d44.9647663!4d-124.0174149!16s%2Fg%2F11bttdk170?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0174149,44.9647663,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Otis Cafe</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Otis+Cafe/@44.9318575,-124.0195835,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea9336615289e1:0x40d2d6e81643193d!8m2!3d44.9318575!4d-124.0195835!16s%2Fg%2F1thx8bpn?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0195835,44.9318575,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Eleanor&#x27;s Undertow</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Eleanor's+Undertow+Takeout/@44.9278525,-124.0145894,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8c2fd32614d9:0x399c9f86f376cdbf!8m2!3d44.9278525!4d-124.0145894!16s%2Fg%2F1tj2br3r?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0145894,44.9278525,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Depoe Baykery</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Depoe+Baykery/@44.8894304,-124.0256734,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea88f5b5586f25:0x753988e9b29ccabd!8m2!3d44.8894304!4d-124.0256734!16s%2Fg%2F1tzgnywn?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0256734,44.8894304,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>The Pines Dine</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/The+Pines+Dine/@44.9284958,-124.0141406,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea8dcdc005fcd7:0xd4be4a02a9d708c!8m2!3d44.9284958!4d-124.0141406!16s%2Fg%2F11p762jlmm?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0141406,44.9284958,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Mo&#x27;s Seafood (Newport·original)</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Mo's+Seafood+%26+Chowder/@44.6288562,-124.0549739,17z/data=!4m10!1m2!2m1!1sMo's+Seafood+and+Chowder+Newport+Oregon+original!3m6!1s0x54c1d7b0d438a6e9:0xe13eacf717be0564!8m2!3d44.6291654!4d-124.0551014!15sCjBNbydzIFNlYWZvb2QgYW5kIENob3dkZXIgTmV3cG9ydCBPcmVnb24gb3JpZ2luYWxaMiIwbW8ncyBzZWFmb29kIGFuZCBjaG93ZGVyIG5ld3BvcnQgb3JlZ29uIG9yaWdpbmFskgESc2VhZm9vZF9yZXN0YXVyYW50mgFEQ2k5RFFVbFJRVU52WkVOb2RIbGpSamx2VDJ4d2NtSldRWHBWYm1oMVpWZG9iRmt3YkZGVU1uUnFVMjVDV1U5V1JSQULgAQD6AQQIABBC!16s%2Fg%2F1tdr30ps?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0549739,44.6288562,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>Chowder Bowl @ Nye Beach</name>
+    <description><![CDATA[车程 | 适合娃:
+🗺 https://www.google.com/maps/place/Chowder+Bowl/@44.639014,-124.0613387,17z/data=!3m1!4b1!4m6!3m5!1s0x54c1d7cc4650e9f9:0x3858997a3e9173aa!8m2!3d44.639014!4d-124.0613387!16s%2Fg%2F11cn9gh73_?entry=ttu&g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D]]></description>
+    <Style>
+      <IconStyle><color>ffb45309</color><scale>0.9</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>rest</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0613387,44.639014,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+    <name>🐋 Backup 观鲸船 · Dockside Charters(Depoe Bay)</name>
+    <description><![CDATA[9月定居灰鲸旺季(每天5-15头)。50ft海岸警卫认证大船,$30/成人/$15/儿童,1-2h,舱内可看鲸换气。须预约看天气开船。与沙板二选一。
+🗺 https://www.google.com/maps/place/Dockside+Charters+and+Whale+Watching+Tours/@44.8091549,-124.0593106,17z/data=!3m1!4b1!4m6!3m5!1s0x54ea87f767d4e1e1:0x9bef03a65447a2a2!8m2!3d44.8091549!4d-124.0593106!16s%2Fg%2F113kb1v72]]></description>
+    <Style>
+      <IconStyle><color>ff3b82f6</color><scale>1.0</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href></Icon>
+      </IconStyle>
+    </Style>
+    <ExtendedData>
+      <Data name="type"><value>backup</value></Data>
+    </ExtendedData>
+    <Point><coordinates>-124.0593106,44.8091549,0</coordinates></Point>
+  </Placemark>
+</Document>
+</kml>
