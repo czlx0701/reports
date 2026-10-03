@@ -202,7 +202,9 @@
    "hits": 10,
    "claim": 10,
    "wd": "correct",
-   "rf": "real"
+   "rf": "real",
+   "pad": false,
+   "df": false
   },
   {
    "code": "L02",
@@ -215,7 +217,9 @@
    "hits": 10,
    "claim": 10,
    "wd": "correct",
-   "rf": "real"
+   "rf": "real",
+   "pad": false,
+   "df": false
   },
   {
    "code": "L03",
@@ -228,7 +232,9 @@
    "hits": 10,
    "claim": 10,
    "wd": "correct",
-   "rf": "real"
+   "rf": "real",
+   "pad": false,
+   "df": false
   },
   {
    "code": "L04",
@@ -241,7 +247,9 @@
    "hits": 4,
    "claim": 8,
    "wd": "correct",
-   "rf": "guessed"
+   "rf": "guessed",
+   "pad": false,
+   "df": true
   },
   {
    "code": "L05",
@@ -254,7 +262,9 @@
    "hits": 5,
    "claim": 10,
    "wd": "correct",
-   "rf": "guessed"
+   "rf": "guessed",
+   "pad": false,
+   "df": false
   },
   {
    "code": "L06",
@@ -267,7 +277,9 @@
    "hits": 8,
    "claim": 10,
    "wd": "absent",
-   "rf": "guessed"
+   "rf": "guessed",
+   "pad": false,
+   "df": false
   },
   {
    "code": "L07",
@@ -280,7 +292,9 @@
    "hits": 6,
    "claim": 11,
    "wd": "correct",
-   "rf": "guessed"
+   "rf": "guessed",
+   "pad": true,
+   "df": false
   },
   {
    "code": "L08",
@@ -293,22 +307,26 @@
    "hits": 9,
    "claim": 9,
    "wd": "correct",
-   "rf": "guessed"
+   "rf": "guessed",
+   "pad": false,
+   "df": false
+  },
+  {
+   "code": "L09",
+   "model": "Qwen3.6-35B-A3B-4bit",
+   "seconds": 636,
+   "bytes": 9565,
+   "content": 58.5,
+   "eff": 7,
+   "total": 65.5,
+   "hits": 7,
+   "claim": 9,
+   "wd": "correct",
+   "rf": "guessed",
+   "pad": true,
+   "df": false
   }
  ],
- "incidents": {
-  "crash0B": [
-   "v5m-qwen3-6-35b-a3b-4bit-1",
-   "v5m-qwen3-6-35b-a3b-optiq-4bit-1",
-   "v5mr-qwen3-6-35b-a3b-4bit-3"
-  ],
-  "timeout": [
-   "v5m-qwen3-6-35b-a3b-4bit-2"
-  ],
-  "killed": [
-   "v5mr-qwen3-6-35b-a3b-4bit-1"
-  ]
- },
  "attempts": [
   {
    "label": "v5m-qwen3-6-35b-a3b-4bit-1",
@@ -393,6 +411,30 @@
    "rc": 0,
    "seconds": 432,
    "bytes": 0
+  },
+  {
+   "label": "v5mr-qwen3-6-35b-a3b-4bit-4",
+   "model": "Qwen3.6-35B-A3B-4bit",
+   "rc": 0,
+   "seconds": 636,
+   "bytes": 9565
   }
- ]
+ ],
+ "incidents": {
+  "crash0B": [
+   "v5m-qwen3-6-35b-a3b-4bit-1",
+   "v5m-qwen3-6-35b-a3b-optiq-4bit-1",
+   "v5mr-qwen3-6-35b-a3b-4bit-3"
+  ],
+  "timeout": [
+   "v5m-qwen3-6-35b-a3b-4bit-2"
+  ],
+  "killed": [
+   "v5mr-qwen3-6-35b-a3b-4bit-1"
+  ]
+ },
+ "summary": {
+  "attempts": 13,
+  "valid": 9
+ }
 }
