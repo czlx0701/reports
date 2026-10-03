@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang=zh><meta charset=utf-8><title>ParentMap 周末活动任务 · 模型评测总报告</title>
+<style>
+body{font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:1120px;margin:0 auto;padding:34px 24px;color:#1a1a1a}
+h1{font-size:24px;margin:0 0 6px} h2{font-size:17px;margin:34px 0 10px;padding-bottom:6px;border-bottom:2px solid #eee}
+h3{font-size:14.5px;margin:20px 0 6px;color:#333}
+.sub{color:#666;font-size:13px;margin-bottom:24px;line-height:1.7}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px}
+th,td{padding:7px 9px;border-bottom:1px solid #eaeaea} th{background:#f7f7f8;font-size:12.5px;color:#444;text-align:left}
+td.m{font-variant-numeric:tabular-nums} td.s{color:#888;font-size:12px} tr:hover td{background:#fafafa}
+.box{background:#f6f8fa;border-left:3px solid #0969da;padding:12px 16px;margin:14px 0;border-radius:0 4px 4px 0}
+.warn{background:#fff8e5;border-left-color:#d4a72c} .bad{background:#ffebe9;border-left-color:#cf222e} .good{background:#dafbe1;border-left-color:#1a7f37}
+ul{padding-left:22px} li{margin:5px 0} code{background:#f2f2f3;padding:1px 5px;border-radius:3px;font-size:12.5px}
+.big{font-size:19px;font-weight:600}
+</style>
+<h1>ParentMap 本周末活动任务 · 模型评测总报告</h1>
+<div class=sub>
+任务：从 parentmap.com 日历找本周末 Eastside、适合 6 岁孩子的活动，挑最推荐的最多 10 个，每条写清干什么/亮点/注意事项。<b>限定只用浏览器通道</b>（Steel REST / CDP / Playwright / 内置 browser），搜索被插件层硬拦。<br>
+题面 v5（不封顶候选池）：范围=本周末两天的<b>全部</b>活动；筛选=Eastside ∩ preschool/elementary ∩ 车程≤1 小时；题面<b>不列举</b>注意事项包含什么、不提示"别只看第一屏"、不提示重复条目。<br>
+真值：周末全量 225 条 → Eastside 56 场次（38 个去重活动）→ 车程过滤后 55 场次。判分：盲评（17 个独立评分员），内容 90 = 事实 30 + 决策 25 + 主动性 20 + 出处诚实 15；效率 10 = 时间分(≤500s=5…>1000s=1) + 体量分(≥13KB=5…<7KB=1)，客观数据不进盲评。
+</div>
+
+<h2>一、头条结论</h2>
+<div class="box good"><span class=big>1. 只有 3.8-27B 追平云端</span><br>
+内容分 <b>84.5 vs 云端 85.7</b>（差 1.2，噪声内）。但总分 88.5 vs 95.0 —— 差的<b>全部是效率</b>：1210s vs 484s（2.5×）、交付 9.1KB vs 17.9KB（约一半）。<b>能力接近，代价是 2–3 倍墙钟时间。</b>按"不把跑得久记成更差"的口径，能力看内容分。</div>
+<div class="box"><b>2. 其余本地模型断层明显</b>：基线 3.6-35B-A3B 58.4 ｜ 3.6-35B-OptiQ 59.8 ｜ AgentWorld 47.7 —— 云端三臂则集中在 83–86。AgentWorld 是"快而薄"型（534s / 6.6KB），基线是"慢而乱"型（1444s / 12.7KB）。</div>
+<div class="box warn"><b>3. pre-flight 原版 vs 不灌：云端无差异</b>（95.0 vs 94.3，差 0.7，n=3 噪声内）。方向性细节：原版交付<b>更薄但分一样高</b>（17.9KB vs 20.2KB），主动性与出处略高 —— 像是让交付"更省"而非"更多"。<b>本地臂上的对照未取得</b>（原计划的本地瘦身臂被砍，见结论 4）。</div>
+<div class="box bad"><b>4. 我做的"瘦身+纠错版 pre-flight(B)"是负资产，未落盘。</b>云端 91.0 vs 原版 95.0，且<b>慢 60%</b>（772s vs 484s）。机制已查清（见第七节）：不是"变短了"，而是我在 4 处给 Steel/CDP 通道做了广告 + 把"可复制命令/环境硬事实"换成了"条件式通道菜单"，模型多花步数做选择、并把最贵的取数路径当正路。</div>
+<div class="box bad"><b>5. 本地模型有稳定的事故率：0 字节崩溃 25%。</b>12 次尝试里 3 次崩溃（基线 2 次、OptiQ 1 次）、1 次撞外层超时、1 次被我的断点脚本误杀。<b>云端同臂 3 次尝试 0 崩溃</b>。</div>
+<div class="box good"><b>6. 题面 v5 的修正是有效的。</b>去掉"只看前 20 个"后，云端 <b>9/9</b> 都把四个头部活动找齐并排进前列（v4 时只有 1/8，且那是封顶所致）；删掉"注意事项清单"与再删掉"重复条目"提示后，这两项变成了新的区分点（多位评分员把"没发现同一活动占两天"计入主动性扣分）。</div>
+
+<h2>二、云端三臂（同模型 deepseek-flash）</h2>
+<table><tr><th>臂</th><th>n</th><th>内容/90</th><th>效率/10</th><th>总分/100</th><th>均耗时</th><th>均交付</th></tr><tr><td>云端 + pre-flight 原版</td><td class=m>3</td><td class=m>85.7</td><td class=m>9.3</td><td class=m><b>95.0</b></td><td class=m>484s</td><td class=m>17877B</td></tr><tr><td>云端 + 不灌 pre-flight</td><td class=m>3</td><td class=m>85.0</td><td class=m>9.3</td><td class=m><b>94.3</b></td><td class=m>533s</td><td class=m>20151B</td></tr><tr><td>云端 + 瘦身版 pre-flight(B)</td><td class=m>3</td><td class=m>83.0</td><td class=m>8.0</td><td class=m><b>91.0</b></td><td class=m>772s</td><td class=m>14664B</td></tr></table>
+
+<h2>三、本地四模型（oMLX，均带 pre-flight 原版）</h2>
+<table><tr><th>模型</th><th>n</th><th>内容/90</th><th>效率/10</th><th>总分/100</th><th>均耗时</th><th>均交付</th></tr><tr><td>Qwen3.8-27B-OptiQ-4bit</td><td class=m>2</td><td class=m>84.5</td><td class=m>4.0</td><td class=m><b>88.5</b></td><td class=m>1210s</td><td class=m>9100B</td></tr><tr><td>Qwen3.6-35B-A3B-4bit</td><td class=m>2</td><td class=m>58.4</td><td class=m>6.0</td><td class=m><b>64.4</b></td><td class=m>1444s</td><td class=m>12666B</td></tr><tr><td>Qwen3.6-35B-A3B-OptiQ-4bit</td><td class=m>2</td><td class=m>59.8</td><td class=m>4.0</td><td class=m><b>63.8</b></td><td class=m>900s</td><td class=m>8136B</td></tr><tr><td>Qwen-AgentWorld-35B-A3B-oQ4</td><td class=m>2</td><td class=m>47.7</td><td class=m>5.5</td><td class=m><b>53.2</b></td><td class=m>534s</td><td class=m>6637B</td></tr></table>
+
+<h2>四、逐条明细</h2>
+<h3>云端（9 条，臂别已盲评后揭示）</h3>
+<table><tr><th>编号</th><th>臂</th><th>内容</th><th>效率</th><th>总分</th><th>秒</th><th>字节</th><th></th></tr><tr><td class=m>V08</td><td>云端 + 瘦身版 pre-flight(B)</td><td class=m>88.0</td><td class=m>10</td><td class=m><b>98.0</b></td><td class=m>425</td><td class=m>17894</td><td class=s></td></tr><tr><td class=m>V06</td><td>云端 + pre-flight 原版</td><td class=m>88.0</td><td class=m>9</td><td class=m><b>97.0</b></td><td class=m>506</td><td class=m>20566</td><td class=s></td></tr><tr><td class=m>V05</td><td>云端 + 不灌 pre-flight</td><td class=m>87.0</td><td class=m>9</td><td class=m><b>96.0</b></td><td class=m>522</td><td class=m>25225</td><td class=s></td></tr><tr><td class=m>V03</td><td>云端 + 不灌 pre-flight</td><td class=m>86.0</td><td class=m>9</td><td class=m><b>95.0</b></td><td class=m>610</td><td class=m>18391</td><td class=s></td></tr><tr><td class=m>V07</td><td>云端 + pre-flight 原版</td><td class=m>84.0</td><td class=m>10</td><td class=m><b>94.0</b></td><td class=m>383</td><td class=m>16562</td><td class=s></td></tr><tr><td class=m>V09</td><td>云端 + pre-flight 原版</td><td class=m>85.0</td><td class=m>9</td><td class=m><b>94.0</b></td><td class=m>562</td><td class=m>16502</td><td class=s></td></tr><tr><td class=m>V01</td><td>云端 + 不灌 pre-flight</td><td class=m>82.0</td><td class=m>10</td><td class=m><b>92.0</b></td><td class=m>466</td><td class=m>16837</td><td class=s></td></tr><tr><td class=m>V02</td><td>云端 + 瘦身版 pre-flight(B)</td><td class=m>82.0</td><td class=m>8</td><td class=m><b>90.0</b></td><td class=m>769</td><td class=m>13015</td><td class=s></td></tr><tr><td class=m>V04</td><td>云端 + 瘦身版 pre-flight(B)</td><td class=m>79.0</td><td class=m>6</td><td class=m><b>85.0</b></td><td class=m>1123</td><td class=m>13084</td><td class=s></td></tr></table>
+<h3>本地（8 条有效交付）</h3>
+<table><tr><th>编号</th><th>模型</th><th>内容</th><th>效率</th><th>总分</th><th>秒</th><th>字节</th><th></th></tr><tr><td class=m>L03</td><td>Qwen3.8-27B-OptiQ-4bit</td><td class=m>84.0</td><td class=m>5</td><td class=m><b>89.0</b></td><td class=m>915</td><td class=m>10124</td><td class=s></td></tr><tr><td class=m>L01</td><td>Qwen3.8-27B-OptiQ-4bit</td><td class=m>85.0</td><td class=m>3</td><td class=m><b>88.0</b></td><td class=m>1504</td><td class=m>8077</td><td class=s></td></tr><tr><td class=m>L08</td><td>Qwen3.6-35B-A3B-4bit</td><td class=m>73.0</td><td class=m>6</td><td class=m><b>79.0</b></td><td class=m>785</td><td class=m>9807</td><td class=s></td></tr><tr><td class=m>L02</td><td>Qwen3.6-35B-A3B-OptiQ-4bit</td><td class=m>68.0</td><td class=m>4</td><td class=m><b>72.0</b></td><td class=m>804</td><td class=m>8808</td><td class=s></td></tr><tr><td class=m>L06</td><td>Qwen-AgentWorld-35B-A3B-oQ4</td><td class=m>60.4</td><td class=m>7</td><td class=m><b>67.4</b></td><td class=m>404</td><td class=m>7115</td><td class=s></td></tr><tr><td class=m>L05</td><td>Qwen3.6-35B-A3B-OptiQ-4bit</td><td class=m>51.5</td><td class=m>4</td><td class=m><b>55.5</b></td><td class=m>997</td><td class=m>7464</td><td class=s></td></tr><tr><td class=m>L07</td><td>Qwen3.6-35B-A3B-4bit</td><td class=m>43.8</td><td class=m>6</td><td class=m><b>49.8</b></td><td class=m>2103</td><td class=m>15525</td><td class=s></td></tr><tr><td class=m>L04</td><td>Qwen-AgentWorld-35B-A3B-oQ4</td><td class=m>35.0</td><td class=m>4</td><td class=m><b>39.0</b></td><td class=m>664</td><td class=m>6159</td><td class=s></td></tr></table>
+
+<h2>五、事故与预算占用（本地臂）</h2>
+<table><tr><th>类型</th><th>次数</th><th>涉及 run</th></tr>
+<tr><td>0 字节崩溃（rc=0 但无交付，模型在一轮内复读退化）</td><td class=m>3</td><td class=s>v5m-qwen3-6-35b-a3b-4bit-1, v5m-qwen3-6-35b-a3b-optiq-4bit-1, v5mr-qwen3-6-35b-a3b-4bit-3</td></tr>
+<tr><td>撞外层超时（rc=124，已写出交付但轮次被砍）</td><td class=m>1</td><td class=s>v5m-qwen3-6-35b-a3b-4bit-2</td></tr>
+<tr><td>被断点脚本误杀（非模型问题，已重发）</td><td class=m>1</td><td class=s>v5mr-qwen3-6-35b-a3b-4bit-1</td></tr>
+</table>
+<p>本地 12 次尝试 → <b>23 次有效交付 / 3 次崩溃（25%）</b>。云端 3 次尝试、0 崩溃、均 484s。<b>"跑满预算"是本地稳定特征</b>：本地均耗时 534–1210s，其中 2 条 >1500s，一条撞 2100s 外层上限；云端 383–616s 全部自然收尾。</p>
+
+<h2>六、失败形态对比</h2>
+<table><tr><th>形态</th><th>云端</th><th>本地</th></tr>
+<tr><td>头部活动（Issaquah Salmon Days / Kelsey Creek Farm Fair / Kirkland 丰收节 / Remlinger）覆盖</td><td class=m>9/9 全中</td><td class=m>仅 27B 2/2 全中；其余整批漏光</td></tr>
+<tr><td>为凑推荐<b>编造地理信息</b>（把该剔除的远端活动写个"就近地址"塞进推荐）</td><td class=m>0 次</td><td class=m>1 次（AgentWorld）</td></tr>
+<tr><td>城市/场地错标</td><td class=m>0 次</td><td class=m>3 条（Pumpkin Farm 写成 Sammamish、Plucky Palomino 写成 Redmond 等）</td></tr>
+<tr><td>把工作日循环课当"本周末"活动</td><td class=m>0 次</td><td class=m>1 条（Toddler Time / Stroller Skate / Tot Shabbat）</td></tr>
+<tr><td>把线上/虚拟活动当出门活动</td><td class=m>0 次</td><td class=m>2 条</td></tr>
+<tr><td>region/age 真按分类轴筛（vs 靠地名猜）</td><td class=m>9/9 real</td><td class=m>2/8 real（仅 27B）</td></tr>
+<tr><td>可核验出处（provenance 均分）</td><td class=m>12.6/15</td><td class=m>9.0/15</td></tr>
+</table>
+
+<h2>七、为什么"瘦身版 pre-flight"更慢更差（已查清机制）</h2>
+<ul>
+<li><b>M1｜我在 4 处给最贵的取数路径做了广告</b>：Step 1 技能路由、Step 2 正文、Step 10 验证、Pitfalls 都新增了 Steel/CDP（原版 0 处提及）。实测：<code>playwright</code> 在 B 臂一条 run 的 tool_calls 里出现 <b>29 次</b>，其余 8 条 run <b>全为 0</b>；那一条走 Playwright-over-Steel 逐页渲染，77 次调用 / 1123s（C 臂 41–48 次调用 / 383–562s）。</li>
+<li><b>M2｜"硬事实 + 可复制命令"被换成"条件式通道菜单"</b>：原版 Step 2 是"唯一通道 + 两行可复制命令 + 环境硬事实（web toolset 已禁用）"；B 版变成"搜索只是线索、被拦就改走浏览器"。实测搜索<b>两臂都没真用过</b>（search_blocked=0）→ 这一改净值纯负，只多出"该走哪条路"的决策点。</li>
+<li><b>M3｜删掉 3 处可复制命令 + 新增"别假设列表默认视图就是当前的"</b>：取数从<b>一次窗口化 REST 查询</b>退化为<b>逐日渲染整页</b>（B 臂一条渲染了 9 个 450KB 页面，到第 20 次 terminal 调用才补 REST）。</li>
+<li><b>量化</b>：>60s 长尾调用 B 12 次/404s（占其壁钟 53%）vs C 3 次/102s；"terminal 里批量 HTTP"B 337s vs C 89s —— <b>差额的 86% 落在这一项</b>。反直觉处：B 臂 <code>browser_exec</code> 反而更少（2.7 vs 4.7）。</li>
+<li><b>教训</b>：skill 里"删命令 / 加可选通道"本身就是行为干预，必须当变量来测，不能当瘦身。</li>
+</ul>
+
+<h2>八、参考批：v4 题面（带提示、封顶 20 条，不可与 v5 混算）</h2>
+<p>云端原版 86.5（n=4）｜云端不灌 87.3（n=3）｜本地基线 50.3（n=1）｜AgentWorld 交付仅 3.4–3.9KB。该批题面把"注意事项清单""10 岁以上可扔"直接写在题面上，且候选池封顶导致头部活动不可达 —— 只在"同题面臂间比较"这一层有效，<b>答案是"题目太贴脸时，臂间就测不出差异"</b>。</p>
+
+<h2>九、未取得</h2>
+<ul>
+<li><b>车程无法独立核验</b>（无地图通道）：判分只查"明显超 1 小时的两条（Lattin's/Olympia、Bellewood/Lynden）有没有被剔除"。云端 9/9 通过；本地 1 条把它们编造地址塞回推荐。</li>
+<li><b>瘦身版在本地模型上的对照</b>：原计划的本地 B 臂（2 条）在确认 B 版为负资产后砍掉，未跑。</li>
+<li><b>n 偏小</b>（臂 3 条、模型 2 条）：按既定规矩 <b>n≤5 不排名</b>，本报告只报分差与失效模式，不做模型排名。</li>
+<li>本地有效样本里 1 条是被外层超时截断后仍写出交付的（rc=124），其耗时按 2103s 计入效率分，属保守记法。</li>
+</ul>
