@@ -1,4 +1,63 @@
 {
+ "buckets": {
+  "有效交付": 14,
+  "模型侧：畸形 tool call": 4,
+  "有效交付（超时截断仍交付）": 1,
+  "模型侧：复读/早退": 5,
+  "误杀（我的断点脚本，非模型问题）": 1,
+  "基础设施：oMLX 卡死/不健康": 11
+ },
+ "detail": {
+  "有效交付": [
+   "v5m-qwen-agentworld-35b-a3b-oq4-1（6159B，末轮650s）",
+   "v5m-qwen-agentworld-35b-a3b-oq4-2（7115B，末轮390s）",
+   "v5m-qwen3-6-35b-a3b-optiq-4bit-2（7464B，末轮982s）",
+   "v5m-qwen3-8-27b-optiq-4bit-1（10124B，末轮902s）",
+   "v5m-qwen3-8-27b-optiq-4bit-2（8077B，末轮1491s）",
+   "v5mr-qwen3-6-35b-a3b-4bit-2（9807B，末轮772s）",
+   "v5mr-qwen3-6-35b-a3b-4bit-4（9565B，末轮621s）",
+   "v5mr-qwen3-6-35b-a3b-optiq-4bit-1（8808B，末轮790s）",
+   "v5r0-4（7077B，末轮1437s）",
+   "v5r0d-10（8578B，末轮404s）",
+   "v5r2-2（7825B，末轮802s）",
+   "v5r2d-4（8280B，末轮352s）",
+   "v5r3d-5（9108B，末轮307s）",
+   "v5r3d-8（9968B，末轮190s）"
+  ],
+  "模型侧：畸形 tool call": [
+   "v5m-qwen3-6-35b-a3b-4bit-1（0B，末轮338s）",
+   "v5mr-qwen3-6-35b-a3b-4bit-3（0B，末轮418s）",
+   "v5r0-3（0B，末轮52s）",
+   "v5r3-4（0B，末轮155s）"
+  ],
+  "有效交付（超时截断仍交付）": [
+   "v5m-qwen3-6-35b-a3b-4bit-2（15525B，末轮2089s）"
+  ],
+  "模型侧：复读/早退": [
+   "v5m-qwen3-6-35b-a3b-optiq-4bit（0B，末轮0s）",
+   "v5m-qwen3-6-35b-a3b-optiq-4bit-1（0B，末轮654s）",
+   "v5r2-1（0B，末轮142s）",
+   "v5r3-2（0B，末轮157s）",
+   "v5r3d-6（0B，末轮46s）"
+  ],
+  "误杀（我的断点脚本，非模型问题）": [
+   "v5mr-qwen3-6-35b-a3b-4bit-1（0B，末轮0s）"
+  ],
+  "基础设施：oMLX 卡死/不健康": [
+   "v5r0-1（0B，末轮1421s）",
+   "v5r0-2（0B，末轮698s）",
+   "v5r0d-5（0B，末轮469s）",
+   "v5r0d-6（0B，末轮469s）",
+   "v5r0d-7（0B，末轮467s）",
+   "v5r0d-8（0B，末轮0s）",
+   "v5r0d-9（0B，末轮469s）",
+   "v5r2-3（0B，末轮1274s）",
+   "v5r3-1（0B，末轮2089s）",
+   "v5r3-3（0B，末轮2087s）",
+   "v5r3d-7（376B，末轮469s）"
+  ]
+ },
+ "total": 36,
  "cloud": [
   {
    "code": "V01",
@@ -193,248 +252,378 @@
  "local": [
   {
    "code": "L01",
+   "arm": "Qwen3.8-27B-OptiQ-4bit",
    "model": "Qwen3.8-27B-OptiQ-4bit",
    "seconds": 1504,
    "bytes": 8077,
    "content": 85.0,
    "eff": 3,
    "total": 88.0,
-   "hits": 10,
-   "claim": 10,
-   "wd": "correct",
    "rf": "real",
+   "wd": "correct",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 10
   },
   {
    "code": "L02",
+   "arm": "Qwen3.6-35B-A3B-OptiQ-4bit",
    "model": "Qwen3.6-35B-A3B-OptiQ-4bit",
    "seconds": 804,
    "bytes": 8808,
    "content": 68,
    "eff": 4,
    "total": 72,
-   "hits": 10,
-   "claim": 10,
-   "wd": "correct",
    "rf": "real",
+   "wd": "correct",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 10
   },
   {
    "code": "L03",
+   "arm": "Qwen3.8-27B-OptiQ-4bit",
    "model": "Qwen3.8-27B-OptiQ-4bit",
    "seconds": 915,
    "bytes": 10124,
    "content": 84,
    "eff": 5,
    "total": 89,
-   "hits": 10,
-   "claim": 10,
-   "wd": "correct",
    "rf": "real",
+   "wd": "correct",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 10
   },
   {
    "code": "L04",
+   "arm": "Qwen-AgentWorld-35B-A3B-oQ4",
    "model": "Qwen-AgentWorld-35B-A3B-oQ4",
    "seconds": 664,
    "bytes": 6159,
    "content": 35,
    "eff": 4,
    "total": 39,
-   "hits": 4,
-   "claim": 8,
-   "wd": "correct",
    "rf": "guessed",
+   "wd": "correct",
    "pad": false,
-   "df": true
+   "df": true,
+   "hits": 4
   },
   {
    "code": "L05",
+   "arm": "Qwen3.6-35B-A3B-OptiQ-4bit",
    "model": "Qwen3.6-35B-A3B-OptiQ-4bit",
    "seconds": 997,
    "bytes": 7464,
    "content": 51.5,
    "eff": 4,
    "total": 55.5,
-   "hits": 5,
-   "claim": 10,
-   "wd": "correct",
    "rf": "guessed",
+   "wd": "correct",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 5
   },
   {
    "code": "L06",
+   "arm": "Qwen-AgentWorld-35B-A3B-oQ4",
    "model": "Qwen-AgentWorld-35B-A3B-oQ4",
    "seconds": 404,
    "bytes": 7115,
    "content": 60.4,
    "eff": 7,
    "total": 67.4,
-   "hits": 8,
-   "claim": 10,
-   "wd": "absent",
    "rf": "guessed",
+   "wd": "absent",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 8
   },
   {
    "code": "L07",
+   "arm": "Qwen3.6-35B-A3B-4bit",
    "model": "Qwen3.6-35B-A3B-4bit",
    "seconds": 2103,
    "bytes": 15525,
    "content": 43.8,
    "eff": 6,
    "total": 49.8,
-   "hits": 6,
-   "claim": 11,
-   "wd": "correct",
    "rf": "guessed",
+   "wd": "correct",
    "pad": true,
-   "df": false
+   "df": false,
+   "hits": 6
   },
   {
    "code": "L08",
+   "arm": "Qwen3.6-35B-A3B-4bit",
    "model": "Qwen3.6-35B-A3B-4bit",
    "seconds": 785,
    "bytes": 9807,
    "content": 73,
    "eff": 6,
    "total": 79,
-   "hits": 9,
-   "claim": 9,
-   "wd": "correct",
    "rf": "guessed",
+   "wd": "correct",
    "pad": false,
-   "df": false
+   "df": false,
+   "hits": 9
   },
   {
    "code": "L09",
+   "arm": "Qwen3.6-35B-A3B-4bit",
    "model": "Qwen3.6-35B-A3B-4bit",
    "seconds": 636,
    "bytes": 9565,
    "content": 58.5,
    "eff": 7,
    "total": 65.5,
-   "hits": 7,
-   "claim": 9,
-   "wd": "correct",
    "rf": "guessed",
+   "wd": "correct",
    "pad": true,
-   "df": false
+   "df": false,
+   "hits": 7
   }
  ],
- "attempts": [
+ "matrix": [
   {
-   "label": "v5m-qwen3-6-35b-a3b-4bit-1",
+   "code": "L10",
+   "label": "v5r2-2",
+   "arm": "preflight+rules-v5",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 0,
-   "seconds": 352,
-   "bytes": 0
+   "seconds": 816,
+   "bytes": 7825,
+   "content": 68.2,
+   "eff": 4,
+   "total": 72.2,
+   "rf": "guessed",
+   "wd": "correct",
+   "pad": false,
+   "df": false,
+   "hits": 9
   },
   {
-   "label": "v5m-qwen3-6-35b-a3b-4bit-2",
+   "code": "L11",
+   "label": "v5r0-4",
+   "arm": "bare",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 124,
-   "seconds": 2103,
-   "bytes": 15525
+   "seconds": 1451,
+   "bytes": 7077,
+   "content": 44.5,
+   "eff": 3,
+   "total": 47.5,
+   "rf": "guessed",
+   "wd": "correct",
+   "pad": true,
+   "df": false,
+   "hits": 5
   },
   {
-   "label": "v5m-qwen-agentworld-35b-a3b-oq4-1",
-   "model": "Qwen-AgentWorld-35B-A3B-oQ4",
-   "rc": 0,
-   "seconds": 664,
-   "bytes": 6159
-  },
-  {
-   "label": "v5m-qwen-agentworld-35b-a3b-oq4-2",
-   "model": "Qwen-AgentWorld-35B-A3B-oQ4",
-   "rc": 0,
-   "seconds": 404,
-   "bytes": 7115
-  },
-  {
-   "label": "v5m-qwen3-6-35b-a3b-optiq-4bit-1",
-   "model": "Qwen3.6-35B-A3B-OptiQ-4bit",
-   "rc": 0,
-   "seconds": 668,
-   "bytes": 0
-  },
-  {
-   "label": "v5m-qwen3-6-35b-a3b-optiq-4bit-2",
-   "model": "Qwen3.6-35B-A3B-OptiQ-4bit",
-   "rc": 0,
-   "seconds": 997,
-   "bytes": 7464
-  },
-  {
-   "label": "v5m-qwen3-8-27b-optiq-4bit-1",
-   "model": "Qwen3.8-27B-OptiQ-4bit",
-   "rc": 0,
-   "seconds": 915,
-   "bytes": 10124
-  },
-  {
-   "label": "v5m-qwen3-8-27b-optiq-4bit-2",
-   "model": "Qwen3.8-27B-OptiQ-4bit",
-   "rc": 0,
-   "seconds": 1504,
-   "bytes": 8077
-  },
-  {
-   "label": "v5mr-qwen3-6-35b-a3b-4bit-1",
+   "code": "L12",
+   "label": "v5r0d-10",
+   "arm": "bare",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 137,
-   "seconds": 3,
-   "bytes": 0
+   "seconds": 420,
+   "bytes": 8578,
+   "content": 75,
+   "eff": 7,
+   "total": 82,
+   "rf": "real",
+   "wd": "correct",
+   "pad": false,
+   "df": false,
+   "hits": 10
   },
   {
-   "label": "v5mr-qwen3-6-35b-a3b-optiq-4bit-1",
-   "model": "Qwen3.6-35B-A3B-OptiQ-4bit",
-   "rc": 0,
-   "seconds": 804,
-   "bytes": 8808
-  },
-  {
-   "label": "v5mr-qwen3-6-35b-a3b-4bit-2",
+   "code": "L13",
+   "label": "v5r2d-4",
+   "arm": "preflight+rules-v5",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 0,
-   "seconds": 785,
-   "bytes": 9807
+   "seconds": 421,
+   "bytes": 8280,
+   "content": 70,
+   "eff": 7,
+   "total": 77,
+   "rf": "guessed",
+   "wd": "correct",
+   "pad": false,
+   "df": false,
+   "hits": 10
   },
   {
-   "label": "v5mr-qwen3-6-35b-a3b-4bit-3",
+   "code": "L14",
+   "label": "v5r3d-5",
+   "arm": "preflight+rules-slim",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 0,
-   "seconds": 432,
-   "bytes": 0
+   "seconds": 360,
+   "bytes": 9108,
+   "content": 77,
+   "eff": 7,
+   "total": 84,
+   "rf": "guessed",
+   "wd": "correct",
+   "pad": false,
+   "df": false,
+   "hits": 10
   },
   {
-   "label": "v5mr-qwen3-6-35b-a3b-4bit-4",
+   "code": "L15",
+   "label": "v5r3d-8",
+   "arm": "preflight+rules-slim",
    "model": "Qwen3.6-35B-A3B-4bit",
-   "rc": 0,
-   "seconds": 636,
-   "bytes": 9565
+   "seconds": 240,
+   "bytes": 9968,
+   "content": 78,
+   "eff": 8,
+   "total": 86,
+   "rf": "guessed",
+   "wd": "correct",
+   "pad": false,
+   "df": false,
+   "hits": 10
   }
  ],
- "incidents": {
-  "crash0B": [
-   "v5m-qwen3-6-35b-a3b-4bit-1",
-   "v5m-qwen3-6-35b-a3b-optiq-4bit-1",
-   "v5mr-qwen3-6-35b-a3b-4bit-3"
+ "arms": {
+  "cloud": [
+   {
+    "arm": "preflight-orig",
+    "n": 3,
+    "c": 85.66666666666667,
+    "e": 9.333333333333334,
+    "t": 95.0,
+    "s": 483.6666666666667,
+    "b": 17876.666666666668,
+    "spread": [
+     84,
+     88,
+     85
+    ]
+   },
+   {
+    "arm": "no-preload",
+    "n": 3,
+    "c": 85.0,
+    "e": 9.333333333333334,
+    "t": 94.33333333333333,
+    "s": 532.6666666666666,
+    "b": 20151.0,
+    "spread": [
+     82,
+     87,
+     86
+    ]
+   },
+   {
+    "arm": "preflight-B(slim)",
+    "n": 3,
+    "c": 83.0,
+    "e": 8.0,
+    "t": 91.0,
+    "s": 772.3333333333334,
+    "b": 14664.333333333334,
+    "spread": [
+     88,
+     82,
+     79
+    ]
+   }
   ],
-  "timeout": [
-   "v5m-qwen3-6-35b-a3b-4bit-2"
+  "local": [
+   {
+    "arm": "Qwen3.8-27B-OptiQ-4bit",
+    "n": 2,
+    "c": 84.5,
+    "e": 4.0,
+    "t": 88.5,
+    "s": 1209.5,
+    "b": 9100.5,
+    "spread": [
+     84,
+     85.0
+    ]
+   },
+   {
+    "arm": "Qwen3.6-35B-A3B-4bit",
+    "n": 3,
+    "c": 58.43333333333334,
+    "e": 6.333333333333333,
+    "t": 64.76666666666667,
+    "s": 1174.6666666666667,
+    "b": 11632.333333333334,
+    "spread": [
+     58.5,
+     73,
+     43.8
+    ]
+   },
+   {
+    "arm": "Qwen3.6-35B-A3B-OptiQ-4bit",
+    "n": 2,
+    "c": 59.75,
+    "e": 4.0,
+    "t": 63.75,
+    "s": 900.5,
+    "b": 8136.0,
+    "spread": [
+     68,
+     51.5
+    ]
+   },
+   {
+    "arm": "Qwen-AgentWorld-35B-A3B-oQ4",
+    "n": 2,
+    "c": 47.7,
+    "e": 5.5,
+    "t": 53.2,
+    "s": 534.0,
+    "b": 6637.0,
+    "spread": [
+     60.4,
+     35
+    ]
+   }
   ],
-  "killed": [
-   "v5mr-qwen3-6-35b-a3b-4bit-1"
+  "matrix": [
+   {
+    "arm": "preflight+rules-slim",
+    "n": 2,
+    "c": 77.5,
+    "e": 7.5,
+    "t": 85.0,
+    "s": 300.0,
+    "b": 9538.0,
+    "spread": [
+     78,
+     77
+    ]
+   },
+   {
+    "arm": "preflight+rules-v5",
+    "n": 2,
+    "c": 69.1,
+    "e": 5.5,
+    "t": 74.6,
+    "s": 618.5,
+    "b": 8052.5,
+    "spread": [
+     70,
+     68.2
+    ]
+   },
+   {
+    "arm": "bare",
+    "n": 2,
+    "c": 59.75,
+    "e": 5.0,
+    "t": 64.75,
+    "s": 935.5,
+    "b": 7827.5,
+    "spread": [
+     75,
+     44.5
+    ]
+   }
   ]
- },
- "summary": {
-  "attempts": 13,
-  "valid": 9
  }
 }
